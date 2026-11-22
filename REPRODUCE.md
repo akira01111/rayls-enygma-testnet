@@ -1050,10 +1050,16 @@ experiment written for the article "What Can the Public Actually See
 When Two Accounts Make a Private Transfer on Rayls Enygma?". It lives
 in `experiments/testnet-journeys/week2-private-payment/`:
 
-- Current: `ARTICLE-AUDIT-2026-11-22-r3.md` (59,742 B,
-  SHA-256 `6a1be437ce51227286f23861615781c01d8e394c5a3b07ea34262ba785c6638f`).
-- Addendum: `ARTICLE-AUDIT-2026-11-22-addendum-f17.md` (17,777 B,
-  SHA-256 `b8e64ffff4c5a028ffc036994b8ff66e9ba6eed7a8ee36fa1b6ca476fd1c347a`)
+- Current: `ARTICLE-AUDIT-2026-11-22-r3.md` (61,062 B,
+  SHA-256 `709565aca40b32a5061d2bfd0513777b5674fd01f5ce230f1f7f8bf7720e327e`).
+  English translation (23 Nov 2026) of the frozen Indonesian source
+  (59,742 B, SHA-256 `6a1be437ce51227286f23861615781c01d8e394c5a3b07ea34262ba785c6638f`,
+  retained privately).
+- Addendum: `ARTICLE-AUDIT-2026-11-22-addendum-f17.md` (18,593 B,
+  SHA-256 `f3f165500761f6c67d25a28da270f78c1a6f60fd606a310620f48b0047b0dfb1`).
+  English translation (23 Nov 2026) of the frozen Indonesian source
+  (17,777 B, SHA-256 `b8e64ffff4c5a028ffc036994b8ff66e9ba6eed7a8ee36fa1b6ca476fd1c347a`,
+  retained privately)
   — §6 F17 split (F17a: statement[3–7] = verified fact; F17b:
   statement[8] integer 4.416 × 10¹⁸ = verified fact, RLS unit =
   interpretation, "total fee" = inference) + pre-commit content and

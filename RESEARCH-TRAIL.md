@@ -525,3 +525,52 @@ Changes (one commit, not pushed):
   v2.1.1 CERTIFIED 12:33 WIB; stage 1 closed 22 Nov 2026 (see the
   stage-1 entry above). No longer an open unknown.
 - The 12:30 WIB inventory report exists only in chat (see above).
+
+## 23 Nov 2026 — English translation of the 8 Indonesian documents (public repos)
+
+Anara's decision: no Indonesian-language document in either public
+repository. All 8 remaining Indonesian documents were translated to
+faithful English (23 Nov 2026, ~00:41–00:48 WIB); nothing else changed.
+Indonesian sources are retained privately in
+`~/workspace/backups/rayls-id-sources-20261123-0041/` (with
+`SOURCES-HASHES.txt`) and are NOT in either repository.
+
+- `ARTICLE-AUDIT-2026-11-22-r3.md` (frozen): 59,742 B / `6a1be437…` →
+  61,062 B / `709565ac…`. Translator's note prepended; findings, numbers,
+  hashes, tables, evidence labels, limitations, and conclusions unchanged.
+  §8.5 still describes the frozen Indonesian source, as written.
+- `ARTICLE-AUDIT-2026-11-22-addendum-f17.md` (frozen): 17,777 B /
+  `b8e64fff…` → 18,593 B / `f3f16550…`. Translator's note prepended;
+  F17a/F17b split and all classifications unchanged.
+- `runs/01-no-overwrite-fix-report.md`: 15,329 B / `435c75d2…` → 15,432 B /
+  `2ccd1b66…` (288 lines unchanged).
+- `experiments/g1-g6-decision-table.md`: 6,251 B / `77b23d20…` → 6,287 B /
+  `71a2fd25…` (43 lines unchanged).
+- `runs/20261121T054711Z/findings/verified-facts/01_network_identity_complete_report.md`:
+  33,459 B / `bc7692ef…` → 33,611 B / `2cbdc977…` (756 lines unchanged;
+  only 25 lines carried Indonesian prose).
+- `EDIT-PLAN.md`: 4,909 B / `cc0b8603…` → 4,885 B / `dd4c18fd…`.
+- `experiments/transactions/tx-09edab2b/.src/build_tx_pdf.py`: comments
+  were already English; the 10 Indonesian display strings were translated
+  (14,097 B / `96e0296e…` → 14,151 B / `1c526e5f…`). Code behavior unchanged
+  (AST identical except string constants); the generator now emits the same
+  English labels as the translated `.src/index.html`.
+- `experiments/transactions/tx-09edab2b/.src/index.html`: 506,135 B /
+  `69f218a8…` → 506,189 B / `bcd9ee5b…` (6,234 lines; exactly 25 lines
+  changed, visible text only — no tag, attribute, script, URL, number,
+  hash, or path touched). The tracked PDF built from it is unchanged.
+
+Verification (23 Nov 2026, re-run after translation): Indonesian-word
+sweep of the full proposed trees — 0 files with ≥3 hits; 0x-hex and URL
+sets identical per file vs the Indonesian sources; digit multisets
+identical except the translator's-note SHAs in r3/F17, one added
+"Module 01" clarifier in the no-overwrite report, and digit→word
+rendering of "3 seconds" in two r3 prose bullets (value unchanged).
+Journey manifest updated for the new EDIT-PLAN.md hash/size (16/16);
+INDEX.md and REPRODUCE.md updated to the new r3/F17/report hashes.
+TX verifier 23/23, datasets verifier 9/9, datasets checksums 5/5, runs
+checksums 5/5 ×2 (+ 3/3 for the older v1 run), links 49/49, both public
+videos match the manifest. Commit + push of branches
+`docs/fix-doc-consistency` (old repo) and `fix/crlf-normalization`
+(new repo) approved by Anara 23 Nov 2026 ~00:42 WIB; merge to `main`
+NOT approved.

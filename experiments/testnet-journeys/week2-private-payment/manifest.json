@@ -38,10 +38,10 @@
       "source_path": "~/workspace/enygma-week2-video/build_video_v2.py"
     },
     {
-      "bytes": 4909,
+      "bytes": 4885,
       "relative_path": "experiments/testnet-journeys/week2-private-payment/EDIT-PLAN.md",
       "role": "edit plan",
-      "sha256": "cc0b860388abf5b5c1472b8fb769c63a98940157e3eda1eb834a697c986f1eba",
+      "sha256": "dd4c18fd5896c60cbbfa99e8081fe8d27b0b69c8a0c2f1aaa558bc132898bed2",
       "source_path": "~/workspace/enygma-week2-video/EDIT-PLAN.md"
     },
     {
@@ -121,6 +121,6 @@
   ],
   "generated_at_utc": "2026-11-22T07:28:36Z",
   "journey": "experiments/testnet-journeys/week2-private-payment",
-  "note": "All files copied with cp (originals untouched). Evidence media (mp4/mp3/ass/jpg) are chmod 444 in the repo. The manifest itself is not listed (self-reference impossible). Four inputs are LOCAL-ONLY and excluded from the public repository by .gitignore (source footage 24,777,960 B + VO mp3 2,953,936 B, each marked local_only: true below); their hashes are kept here for provenance, and the final videos are reproducible only while those local inputs exist. Four more files are LOCAL-ONLY since the 22 Nov 2026 sanitization round (original final videos + chk-21/chk-22, which still show truncated Enygma Spend/View key fragments); their sanitized public versions are listed below and are the files committed to the public repository.",
+  "note": "All files copied with cp (originals untouched). Evidence media (mp4/mp3/ass/jpg) are chmod 444 in the repo. The manifest itself is not listed (self-reference impossible). Four inputs are LOCAL-ONLY and excluded from the public repository by .gitignore (source footage 24,777,960 B + VO mp3 2,953,936 B, each marked local_only: true below); their hashes are kept here for provenance, and the final videos are reproducible only while those local inputs exist. Four more files are LOCAL-ONLY since the 22 Nov 2026 sanitization round (original final videos + chk-21/chk-22, which still show truncated Enygma Spend/View key fragments); their sanitized public versions are listed below and are the files committed to the public repository. Update 23 Nov 2026: EDIT-PLAN.md was translated from Indonesian to English for the public repository (4,885 B, SHA-256 dd4c18fd5896c60cbbfa99e8081fe8d27b0b69c8a0c2f1aaa558bc132898bed2); the Indonesian source (4,909 B, SHA-256 cc0b860388abf5b5c1472b8fb769c63a98940157e3eda1eb834a697c986f1eba) is retained privately and is not in the repository.",
   "tx_audit": "experiments/transactions/tx-09edab2b/"
 }

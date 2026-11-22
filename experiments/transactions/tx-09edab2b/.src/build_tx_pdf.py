@@ -83,7 +83,7 @@ SECTIONS = [
     ("15", "s15", "Raw — registry usernames", "experiments/transactions/tx-09edab2b/raw/registry-usernames.json", "json"),
     ("16", "s16", "Raw — related fee-settlement tx", "experiments/transactions/tx-09edab2b/raw/related-tx-0xacc7d175.json", "json"),
     ("17", "s17", "Manifest (SHA-256)", "experiments/transactions/tx-09edab2b/manifest.json", "json"),
-    ("A", "appa", "Appendix A — Verification record", "(dibuat untuk PDF ini)", "appendix"),
+    ("A", "appa", "Appendix A — Verification record", "(created for this PDF)", "appendix"),
 ]
 
 APPENDIX_HTML = """
@@ -196,25 +196,25 @@ def main():
                  "<p>Transaction <code>0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb</code></p>"
                  "<p>Block 24825928 (2026-11-21 09:40:42 UTC) &middot; chain ID 7295799 &middot; SharedVaultProxy transferV2</p>"
                  "<p>Status: audit complete, independent verification 23/23 PASS &middot; no commit/push &middot; no article yet</p>"
-                 "<p>Dokumen ini hanya untuk review. File bukti asli di repository tidak diubah atau digabung &mdash; yang digabung di sini hanyalah salinan bacanya.</p></div>\n")
-    parts.append("<p class=\"meta\">Dibuat: 2026-11-22 &middot; Diekspor ke PDF: 2026-11-22</p>\n")
+                 "<p>This document is for review only. The original evidence files in the repository were not changed or merged &mdash; what was merged here are only reading copies of them.</p></div>\n")
+    parts.append("<p class=\"meta\">Created: 2026-11-22 &middot; Exported to PDF: 2026-11-22</p>\n")
 
     # TOC
-    parts.append("<h1 class=\"section\" id=\"toc\">Daftar Isi</h1>\n")
-    parts.append("<table class=\"toc\"><thead><tr><th>Bagian</th><th>Judul</th><th>File sumber</th><th>Hal.</th></tr></thead><tbody>\n")
-    parts.append(f"<tr><td class=\"num\"></td><td><a href=\"#toc\">Daftar Isi</a></td><td>bagian ini</td><td class=\"pg\">{toc_pages.get('toc', '—')}</td></tr>\n")
+    parts.append("<h1 class=\"section\" id=\"toc\">Table of Contents</h1>\n")
+    parts.append("<table class=\"toc\"><thead><tr><th>Section</th><th>Title</th><th>Source file</th><th>Page</th></tr></thead><tbody>\n")
+    parts.append(f"<tr><td class=\"num\"></td><td><a href=\"#toc\">Table of Contents</a></td><td>this section</td><td class=\"pg\">{toc_pages.get('toc', '—')}</td></tr>\n")
     for num, anchor, title, src, kind in SECTIONS:
         pg = toc_pages.get(anchor, "—")
-        src_disp = html.escape(src.split("/")[-1]) if kind != "appendix" else "dibuat untuk PDF ini"
+        src_disp = html.escape(src.split("/")[-1]) if kind != "appendix" else "created for this PDF"
         parts.append(f"<tr><td class=\"num\">{num}</td><td><a href=\"#{anchor}\">{html.escape(title)}</a></td><td>{src_disp}</td><td class=\"pg\">{pg}</td></tr>\n")
     parts.append("</tbody></table>\n")
-    parts.append("<p>Setiap bagian mencantumkan file sumbernya (path relatif terhadap root repository), ukuran file, dan SHA256 dari file sumber tersebut pada saat PDF ini dibuat.</p>\n")
+    parts.append("<p>Each section lists its source file (path relative to the repository root), file size, and the SHA256 of that source file at the time this PDF was created.</p>\n")
 
     # sections
     for num, anchor, title, src, kind in SECTIONS:
         parts.append(f"<h1 class=\"section\" id=\"{anchor}\">{num} {html.escape(title)}</h1>\n")
         if kind == "appendix":
-            parts.append("<p class=\"src\">Sumber: dibuat untuk PDF ini &middot; ringkasan hasil verifikasi independen (lihat manifest.json untuk SHA256 tiap file bukti).</p>\n")
+            parts.append("<p class=\"src\">Source: created for this PDF &middot; summary of the independent verification results (see manifest.json for the SHA256 of each evidence file).</p>\n")
             parts.append(APPENDIX_HTML)
             continue
         if src == "experiments/transactions/tx-09edab2b/manifest.json":
@@ -223,7 +223,7 @@ def main():
         else:
             ent = info[src]
         full = os.path.join(os.path.expanduser("~/workspace/rayls-enygma-public-testnet-research"), src)
-        parts.append(f"<p class=\"src\">Sumber: <code>{html.escape(src)}</code> &middot; {ent['bytes']} byte &middot; SHA256: <code>{ent['sha256']}</code></p>\n")
+        parts.append(f"<p class=\"src\">Source: <code>{html.escape(src)}</code> &middot; {ent['bytes']} byte &middot; SHA256: <code>{ent['sha256']}</code></p>\n")
         text = open(full, encoding="utf-8").read()
         if kind == "md":
             parts.append(md_to_html(text))

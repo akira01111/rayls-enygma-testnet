@@ -45,11 +45,11 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 </head>
 <body>
 <h1 class="cover">TX Audit &mdash; Week 2 Experiment: Complete History</h1>
-<div class="coverbox"><p>Rayls Enygma Public Testnet &middot; Repository <code>rayls-enygma-public-testnet-research</code></p><p>Transaction <code>0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb</code></p><p>Block 24825928 (2026-11-21 09:40:42 UTC) &middot; chain ID 7295799 &middot; SharedVaultProxy transferV2</p><p>Status: audit complete, independent verification 23/23 PASS &middot; no commit/push &middot; no article yet</p><p>Dokumen ini hanya untuk review. File bukti asli di repository tidak diubah atau digabung &mdash; yang digabung di sini hanyalah salinan bacanya.</p></div>
-<p class="meta">Dibuat: 2026-11-22 &middot; Diekspor ke PDF: 2026-11-22</p>
-<h1 class="section" id="toc">Daftar Isi</h1>
-<table class="toc"><thead><tr><th>Bagian</th><th>Judul</th><th>File sumber</th><th>Hal.</th></tr></thead><tbody>
-<tr><td class="num"></td><td><a href="#toc">Daftar Isi</a></td><td>bagian ini</td><td class="pg">2</td></tr>
+<div class="coverbox"><p>Rayls Enygma Public Testnet &middot; Repository <code>rayls-enygma-public-testnet-research</code></p><p>Transaction <code>0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb</code></p><p>Block 24825928 (2026-11-21 09:40:42 UTC) &middot; chain ID 7295799 &middot; SharedVaultProxy transferV2</p><p>Status: audit complete, independent verification 23/23 PASS &middot; no commit/push &middot; no article yet</p><p>This document is for review only. The original evidence files in the repository were not changed or merged &mdash; what was merged here are only reading copies of them.</p></div>
+<p class="meta">Created: 2026-11-22 &middot; Exported to PDF: 2026-11-22</p>
+<h1 class="section" id="toc">Table of Contents</h1>
+<table class="toc"><thead><tr><th>Section</th><th>Title</th><th>Source file</th><th>Page</th></tr></thead><tbody>
+<tr><td class="num"></td><td><a href="#toc">Table of Contents</a></td><td>this section</td><td class="pg">2</td></tr>
 <tr><td class="num">1</td><td><a href="#s1">TX Audit Report</a></td><td>TX-AUDIT-REPORT.md</td><td class="pg">3</td></tr>
 <tr><td class="num">2</td><td><a href="#s2">Remaining gaps</a></td><td>gaps.md</td><td class="pg">10</td></tr>
 <tr><td class="num">3</td><td><a href="#s3">TODO — unfinished work</a></td><td>TODO.md</td><td class="pg">13</td></tr>
@@ -67,11 +67,11 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 <tr><td class="num">15</td><td><a href="#s15">Raw — registry usernames</a></td><td>registry-usernames.json</td><td class="pg">83</td></tr>
 <tr><td class="num">16</td><td><a href="#s16">Raw — related fee-settlement tx</a></td><td>related-tx-0xacc7d175.json</td><td class="pg">149</td></tr>
 <tr><td class="num">17</td><td><a href="#s17">Manifest (SHA-256)</a></td><td>manifest.json</td><td class="pg">152</td></tr>
-<tr><td class="num">A</td><td><a href="#appa">Appendix A — Verification record</a></td><td>dibuat untuk PDF ini</td><td class="pg">155</td></tr>
+<tr><td class="num">A</td><td><a href="#appa">Appendix A — Verification record</a></td><td>created for this PDF</td><td class="pg">155</td></tr>
 </tbody></table>
-<p>Setiap bagian mencantumkan file sumbernya (path relatif terhadap root repository), ukuran file, dan SHA256 dari file sumber tersebut pada saat PDF ini dibuat.</p>
+<p>Each section lists its source file (path relative to the repository root), file size, and the SHA256 of that source file at the time this PDF was created.</p>
 <h1 class="section" id="s1">1 TX Audit Report</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/TX-AUDIT-REPORT.md</code> &middot; 16604 byte &middot; SHA256: <code>ac913a7c32958b5eff72e4e746ff1102338867ed007e31af374c7fccb84d7bd7</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/TX-AUDIT-REPORT.md</code> &middot; 16604 byte &middot; SHA256: <code>ac913a7c32958b5eff72e4e746ff1102338867ed007e31af374c7fccb84d7bd7</code></p>
 <h1>TX Audit Report — Rayls Enygma Week 2 Experiment</h1>
 <p><b>Transaction:</b> <code>0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb</code> <b>Network:</b> Rayls Public Testnet, chain ID 7295799 (<code>0x6f5337</code>) <b>Block:</b> 24825928 (2026-11-21 09:40:42 UTC; exactly 1 transaction in the block) <b>Audit date:</b> 21–22 Nov 2026 (retrieved 21 Nov 16:13–16:29 UTC; Anara asleep, overnight job) <b>Experiment:</b> private payment of 6 RLS from @anara to @kittynim, recorded by Anara on video with ElevenLabs (Zara) voice-over. This audit examines the on-chain transaction only; the wallet UI / VO / video are treated as experiment context, not as on-chain evidence.</p>
 <p><b>Labels used</b> (same 6-label taxonomy as the initial audit): verified-fact / official-claim / direct-observation / reconstruction / inference / unknown. Every claim in <code>decoded/audit_summary.json</code> carries one of these labels.</p>
@@ -253,7 +253,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 <li><code>TODO.md</code> — unfinished work</li>
 <li><code>manifest.json</code> — every file: path, bytes, SHA-256, source, retrieved_at_utc</li>
 </ul><h1 class="section" id="s2">2 Remaining gaps</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/gaps.md</code> &middot; 5004 byte &middot; SHA256: <code>cc08501f09a3ff61e18c845db502c2958c1920b1590c45b2f5cce067e411460d</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/gaps.md</code> &middot; 5004 byte &middot; SHA256: <code>cc08501f09a3ff61e18c845db502c2958c1920b1590c45b2f5cce067e411460d</code></p>
 <h1>Remaining gaps — after the Week 2 TX audit (0x09edab2b…)</h1>
 <p>For each gap from the initial audit (ENYGMA-TESTNET-AUDIT-REPORT.md §H/§I and the experiment plan §G): what this TX audit resolves vs what stays unknown. Nothing here is forced to an answer.</p>
 <h2>1. Deployment identity unknowns — STAYS UNKNOWN</h2>
@@ -339,7 +339,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 <li>Read IACR ePrint 2025/1638 + 2025/1639; re-check demo persistence; verify</li>
 </ul>
 <p>EnygmaDvp; check USDr precompile nature.</p><h1 class="section" id="s3">3 TODO — unfinished work</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/TODO.md</code> &middot; 3344 byte &middot; SHA256: <code>aeb18a54e405806b0663067ac3d3ff3954561e25490b71ee869e45030cb13bf9</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/TODO.md</code> &middot; 3344 byte &middot; SHA256: <code>aeb18a54e405806b0663067ac3d3ff3954561e25490b71ee869e45030cb13bf9</code></p>
 <h1>TODO — Week 2 TX audit (0x09edab2b…)</h1>
 <p>Unfinished work, blocked items, and next steps for the morning review. Nothing here is a commitment to do it — items need Anara&#x27;s decision where noted.</p>
 <h2>Done in this package</h2>
@@ -401,7 +401,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 <li>No verified contract source for the deployed vault implementation exists</li>
 </ul>
 <p>(bundle ABI used instead) — a standing limitation, not a failure of this run.</p><h1 class="section" id="s4">4 Audit summary (decoded)</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/decoded/audit_summary.json</code> &middot; 12994 byte &middot; SHA256: <code>19c3a36e09d6b071f64b7700e359d08a08afa2444c289b2552b2a623e4cd5b33</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/decoded/audit_summary.json</code> &middot; 12994 byte &middot; SHA256: <code>19c3a36e09d6b071f64b7700e359d08a08afa2444c289b2552b2a623e4cd5b33</code></p>
 <pre>{
   &quot;block&quot;: 24825928,
   &quot;chain_id&quot;: 7295799,
@@ -529,7 +529,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s5">5 Decoded events</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/decoded/decoded_events.json</code> &middot; 31391 byte &middot; SHA256: <code>5a8ad453388f6cb12cc7335192128cbbb633cf475085901fe183a97026a58008</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/decoded/decoded_events.json</code> &middot; 31391 byte &middot; SHA256: <code>5a8ad453388f6cb12cc7335192128cbbb633cf475085901fe183a97026a58008</code></p>
 <pre>{
   &quot;block&quot;: 24825928,
   &quot;calldata&quot;: {
@@ -1070,7 +1070,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s6">6 Bundle ABI extract</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/decoded/bundle-abi-extract.json</code> &middot; 4449 byte &middot; SHA256: <code>5df1cc6a69f7de72ed0dd1c5072e713f81a5f0993288771976d81f6736f4ff07</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/decoded/bundle-abi-extract.json</code> &middot; 4449 byte &middot; SHA256: <code>5df1cc6a69f7de72ed0dd1c5072e713f81a5f0993288771976d81f6736f4ff07</code></p>
 <pre>{
   &quot;event_signatures&quot;: {
     &quot;CoinLocked&quot;: &quot;CoinLocked(uint256,uint256,uint256)&quot;,
@@ -1105,7 +1105,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s7">7 4byte.directory lookups</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/decoded/lookups-4byte.json</code> &middot; 1914 byte &middot; SHA256: <code>b0c7b0184f018227ff7237cbac8445623256015b0e1d5a7947a28b50661a36e4</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/decoded/lookups-4byte.json</code> &middot; 1914 byte &middot; SHA256: <code>b0c7b0184f018227ff7237cbac8445623256015b0e1d5a7947a28b50661a36e4</code></p>
 <pre>{
   &quot;finding&quot;: &quot;all four lookups returned count 0: the function selector and the three event topic0s are not in the 4byte.directory database. Resolution therefore relies on the demo-bundle ABI + local keccak256 topic matching (see decode script), not on 4byte.&quot;,
   &quot;queries&quot;: [
@@ -1159,7 +1159,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s8">8 Raw — transaction</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/transaction.json</code> &middot; 12828 byte &middot; SHA256: <code>1ade629551b3d14a7d0bd048cc66ec91920221f3bf8ad2dd247d748728730be0</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/transaction.json</code> &middot; 12828 byte &middot; SHA256: <code>1ade629551b3d14a7d0bd048cc66ec91920221f3bf8ad2dd247d748728730be0</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -1280,7 +1280,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s9">9 Raw — receipt</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/receipt.json</code> &middot; 17484 byte &middot; SHA256: <code>2f08084e5c8fbc84daf2303c3c4b222171b3f6192a49693925d1a917fe855988</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/receipt.json</code> &middot; 17484 byte &middot; SHA256: <code>2f08084e5c8fbc84daf2303c3c4b222171b3f6192a49693925d1a917fe855988</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -1504,7 +1504,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s10">10 Raw — logs</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/logs.json</code> &middot; 30095 byte &middot; SHA256: <code>e500fa8f347f571da0a3e0060c12c7c6e38da8927fb4b7da52fcda699c35ef51</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/logs.json</code> &middot; 30095 byte &middot; SHA256: <code>e500fa8f347f571da0a3e0060c12c7c6e38da8927fb4b7da52fcda699c35ef51</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -1864,7 +1864,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s11">11 Raw — block</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/block.json</code> &middot; 5037 byte &middot; SHA256: <code>958481ee13bece5f15dcbbaef4948dd13c8a23e311e30a06fab9b91515fa9492</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/block.json</code> &middot; 5037 byte &middot; SHA256: <code>958481ee13bece5f15dcbbaef4948dd13c8a23e311e30a06fab9b91515fa9492</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -2000,7 +2000,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s12">12 Raw — contracts</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/contracts.json</code> &middot; 63532 byte &middot; SHA256: <code>1ecc0fd47d9c0f89ddfa55b656630be9b67ba5c1aba1e110a07cc5381974d6db</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/contracts.json</code> &middot; 63532 byte &middot; SHA256: <code>1ecc0fd47d9c0f89ddfa55b656630be9b67ba5c1aba1e110a07cc5381974d6db</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -2269,7 +2269,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s13">13 Raw — Explorer cross-check</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/explorer.json</code> &middot; 22622 byte &middot; SHA256: <code>557b5f0ce7d6c814dab5cf39daa8f3021a1554ada7650e61633d17814b5b28ad</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/explorer.json</code> &middot; 22622 byte &middot; SHA256: <code>557b5f0ce7d6c814dab5cf39daa8f3021a1554ada7650e61633d17814b5b28ad</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -2398,7 +2398,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s14">14 Raw — relayer txlist</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/explorer-relayer-txlist.json</code> &middot; 24321 byte &middot; SHA256: <code>dcb8043e40aefae32299d14a0389b26813de2e2849271cdef0a68f83f95ca23a</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/explorer-relayer-txlist.json</code> &middot; 24321 byte &middot; SHA256: <code>dcb8043e40aefae32299d14a0389b26813de2e2849271cdef0a68f83f95ca23a</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -2517,7 +2517,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s15">15 Raw — registry usernames</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/registry-usernames.json</code> &middot; 154400 byte &middot; SHA256: <code>66d515ebb152483f9b2a4f98ee73e1ec60463866141a7c7d5cb52f802508bf20</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/registry-usernames.json</code> &middot; 154400 byte &middot; SHA256: <code>66d515ebb152483f9b2a4f98ee73e1ec60463866141a7c7d5cb52f802508bf20</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -5923,7 +5923,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s16">16 Raw — related fee-settlement tx</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/raw/related-tx-0xacc7d175.json</code> &middot; 6456 byte &middot; SHA256: <code>48fe56b9189b4a9eb66a3e16c48afcda77ba8a19953ec5d5ea698d57ffffda86</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/raw/related-tx-0xacc7d175.json</code> &middot; 6456 byte &middot; SHA256: <code>48fe56b9189b4a9eb66a3e16c48afcda77ba8a19953ec5d5ea698d57ffffda86</code></p>
 <pre>{
   &quot;calls&quot;: [
     {
@@ -6049,7 +6049,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="s17">17 Manifest (SHA-256)</h1>
-<p class="src">Sumber: <code>experiments/transactions/tx-09edab2b/manifest.json</code> &middot; 7569 byte &middot; SHA256: <code>a73958da658723701239f929e46b221e99aef3b4c02f188ac7212d32a0729adc</code></p>
+<p class="src">Source: <code>experiments/transactions/tx-09edab2b/manifest.json</code> &middot; 7569 byte &middot; SHA256: <code>a73958da658723701239f929e46b221e99aef3b4c02f188ac7212d32a0729adc</code></p>
 <pre>{
   &quot;block&quot;: 24825928,
   &quot;chain_id&quot;: 7295799,
@@ -6201,7 +6201,7 @@ blockquote { margin: 0 0 8pt 0; padding-left: 10pt; border-left: 3px solid #cccc
 }
 </pre>
 <h1 class="section" id="appa">A Appendix A — Verification record</h1>
-<p class="src">Sumber: dibuat untuk PDF ini &middot; ringkasan hasil verifikasi independen (lihat manifest.json untuk SHA256 tiap file bukti).</p>
+<p class="src">Source: created for this PDF &middot; summary of the independent verification results (see manifest.json for the SHA256 of each evidence file).</p>
 
 <h2>Verification runs</h2>
 <p><b>Independent verify script</b> <code>scripts/verify_tx_audit_09edab2b.py</code> v1.0.0

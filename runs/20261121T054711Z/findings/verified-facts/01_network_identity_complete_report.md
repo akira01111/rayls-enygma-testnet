@@ -7,32 +7,32 @@ Retrieved at (UTC): 2026-11-21T05:47:11Z
 Script version that produced this run: 1.0.0 (before the no-overwrite fix; the exact code is preserved in runs/20261121T054711Z/scripts/01_network_identity.py)
 Status: **PASS (9/9 checks)**
 
-## Catatan tentang file ini
+## Note about this file
 
-File ini adalah **salinan gabungan untuk dibaca** — isinya kode, output terminal, raw JSON, metadata, checksum, dataset, dan verification report Modul 01 dalam satu dokumen.
-Bukti yang berlaku tetap **6 file terpisah** di direktori run ini (lihat daftar di bawah), karena:
-- raw data harus berdiri sendiri agar tidak bisa berubah tanpa ketahuan — checksum SHA256 hanya bermakna kalau file raw-nya terpisah dan tidak disentuh;
-- script harus berupa file `.py` agar bisa dijalankan ulang apa adanya;
-- kalau semuanya digabung ke satu file yang bisa diedit, satu perbaikan ketik di bagian laporan akan mengubah hash seluruh file, dan raw data tidak lagi bisa dibuktikan belum berubah.
-Jadi: file ini untuk dibaca dan direview; 6 file terpisah tetap jadi bukti resminya.
+This file is a **combined copy for reading** — it contains the code, terminal output, raw JSON, metadata, checksums, dataset, and verification report of Module 01 in a single document.
+The authoritative evidence remains the **6 separate files** in this run directory (see the list below), because:
+- raw data must stand on its own so it cannot be changed undetected — a SHA256 checksum is only meaningful if the raw file is separate and untouched;
+- the script must be a `.py` file so it can be re-run as-is;
+- if everything were merged into a single editable file, one typo fix in the report section would change the hash of the whole file, and the raw data could no longer be proven unchanged.
+So: this file is for reading and review; the 6 separate files remain the official evidence.
 
-Catatan pemindahan (21 Nov 2026 ~12:55 WIB): bukti run ini awalnya ditulis di lokasi kanonik (raw-data/, datasets/, findings/) oleh script v1.0.0, lalu dipindahkan byte-identik ke runs/20261121T054711Z/ saat script diperbaiki ke v2.0.0 (layout no-overwrite). Semua SHA256 diverifikasi sama sebelum dan sesudah pemindahan. Isi pengamatan tidak diubah. Raw JSON dan salinan script di run ini berstatus read-only (chmod 444). Metadata run ini belum mencatat run_id/script_version karena dibuat oleh script v1.0.0 sebelum field itu ada — run ID dan versi script untuk run ini dicatat di sini dan di runs/README.md.
+Relocation note (21 Nov 2026 ~12:55 WIB): this run's evidence was originally written to the canonical locations (raw-data/, datasets/, findings/) by script v1.0.0, then moved byte-identically to runs/20261121T054711Z/ when the script was fixed to v2.0.0 (no-overwrite layout). All SHA256 values were verified identical before and after the move. The observed content was not changed. The raw JSON and the script copy in this run are read-only (chmod 444). This run's metadata does not yet record run_id/script_version because it was created by script v1.0.0 before those fields existed — the run ID and script version for this run are recorded here and in runs/README.md.
 
-File bukti (run 20261121T054711Z):
-- runs/20261121T054711Z/scripts/01_network_identity.py (v1.0.0, salinan byte-identik dari script yang menjalankan run ini)
+Evidence files (run 20261121T054711Z):
+- runs/20261121T054711Z/scripts/01_network_identity.py (v1.0.0, byte-identical copy of the script that ran this run)
 - runs/20261121T054711Z/raw-data/rpc-responses/01_network_identity_raw.json
 - runs/20261121T054711Z/datasets/01_network_identity.csv
 - runs/20261121T054711Z/datasets/01_network_identity_metadata.json
 - runs/20261121T054711Z/datasets/01_network_identity_checksums.sha256
 - runs/20261121T054711Z/findings/verified-facts/01_network_identity_verification.md
 
-## 1. Ringkasan hasil
+## 1. Summary of results
 
-- Chain ID: 7295799 (0x6f5337) — cocok dengan audit sebelumnya.
-- Latest block: 24800204 (0x17a6bcc), hash 0x7c1ffb4e9dfb5eb64869e071c7a3f2ba0ffb01e894985c93ed9b3e0b90c3dee5, timestamp 2026-11-21T05:47:14Z — naik +6215 blok dari baseline 24793989 (21 Nov 04:50:45 UTC).
-- Genesis hash: 0x33b818f13cab5c2e3e7bb589cbd0612e78e1139f3add29f0d5f0d6a03a5c9545, timestamp 2026-03-12T16:22:30Z (data baru, belum ada di audit sebelumnya).
-- Blok latest yang diambil kosong (0 transaksi).
-- Run 1 sempat FAIL (eth_chainId putus koneksi 3x + cek blok terlalu ketat), diperbaiki (retry 5x + toleransi drift 10 blok), run 2 PASS.
+- Chain ID: 7295799 (0x6f5337) — matches the previous audit.
+- Latest block: 24800204 (0x17a6bcc), hash 0x7c1ffb4e9dfb5eb64869e071c7a3f2ba0ffb01e894985c93ed9b3e0b90c3dee5, timestamp 2026-11-21T05:47:14Z — up +6215 blocks from baseline 24793989 (21 Nov 04:50:45 UTC).
+- Genesis hash: 0x33b818f13cab5c2e3e7bb589cbd0612e78e1139f3add29f0d5f0d6a03a5c9545, timestamp 2026-03-12T16:22:30Z (new data, not present in the previous audit).
+- The latest block fetched is empty (0 transactions).
+- Run 1 initially FAILED (eth_chainId connection dropped 3x + block check too strict), fixed (retry 5x + 10-block drift tolerance), run 2 PASS.
 
 ## 2. Verification report
 
@@ -156,7 +156,7 @@ retrieved_at_utc,rpc_endpoint,chain_id,chain_id_hex,latest_block,latest_block_ha
 2026-11-21T05:47:11Z,https://testnet-rpc.rayls.com,7295799,0x6f5337,24800204,0x7c1ffb4e9dfb5eb64869e071c7a3f2ba0ffb01e894985c93ed9b3e0b90c3dee5,2026-11-21T05:47:14Z,0x33b818f13cab5c2e3e7bb589cbd0612e78e1139f3add29f0d5f0d6a03a5c9545,2026-03-12T16:22:30Z,PASS
 ```
 
-## 7. Raw JSON (salinan — file aslinya: runs/20261121T054711Z/raw-data/rpc-responses/01_network_identity_raw.json)
+## 7. Raw JSON (copy — original file: runs/20261121T054711Z/raw-data/rpc-responses/01_network_identity_raw.json)
 
 ```json
 {
@@ -311,7 +311,7 @@ retrieved_at_utc,rpc_endpoint,chain_id,chain_id_hex,latest_block,latest_block_ha
 }
 ```
 
-## 8. Kode Python lengkap (salinan — file aslinya: runs/20261121T054711Z/scripts/01_network_identity.py, v1.0.0)
+## 8. Complete Python code (copy — original file: runs/20261121T054711Z/scripts/01_network_identity.py, v1.0.0)
 
 ```python
 #!/usr/bin/env python3
@@ -746,11 +746,11 @@ if __name__ == "__main__":
     sys.exit(main())
 ```
 
-## 9. Keterbatasan pemeriksaan
+## 9. Limitations of this check
 
-- Read-only RPC saja. Tidak membuktikan apa pun soal demo, relayer, atau perilaku kontrak.
-- Di chain yang hidup, eth_blockNumber dan eth_getBlockByNumber(latest) dibaca beda detik, jadi cek mengizinkan latest block sampai 10 blok di depan bacaan blockNumber, dan tidak pernah di belakang.
-- Koneksi RPC bisa putus di tengah respons lewat egress proxy VM ini (teramati: RemoteDisconnected / IncompleteRead via urllib; call yang sama berhasil via curl). Script retry tiap call sampai 5x di koneksi baru dan mencatat jumlah attempt per call di raw file.
-- Genesis block dibaca dari RPC yang sama; tidak di-cross-check ke sumber arsip independen.
-- Timestamp blok adalah nilai yang dilaporkan chain, bukan wall-clock yang diukur independen.
-- PASS di sini berarti identitas jaringan konsisten pada saat pengambilan; tidak memverifikasi modul lain.
+- Read-only RPC only. It proves nothing about the demo, the relayer, or contract behaviour.
+- On a live chain, eth_blockNumber and eth_getBlockByNumber(latest) are read seconds apart, so the check allows the latest block to be up to 10 blocks ahead of the blockNumber read, and never behind.
+- The RPC connection can drop mid-response through this VM's egress proxy (observed: RemoteDisconnected / IncompleteRead via urllib; the same call succeeds via curl). The script retries each call up to 5 times on a fresh connection and records the attempt count per call in the raw file.
+- The genesis block is read from the same RPC endpoint; it was not cross-checked against an independent archive source.
+- Block timestamps are the values reported by the chain, not independently measured wall-clock times.
+- A PASS here means network identity is consistent at retrieval time; it does not verify any other module.

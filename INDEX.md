@@ -2,7 +2,7 @@
 
 This index maps the research packages and records their provenance and status. It distinguishes source evidence, derived outputs, and sanitized public copies. Some original video and screenshot files are local-only; their provenance is recorded in the journey manifest and the exclusions in section 5.
 
-Repository: `rayls-enygma-public-testnet-research` (public). The current public `main` branch points to `deb3d09` ("Restructure repo presentation (Phase 1)", 22 Nov 2026). This index records that restructure and the repository state described by the cited evidence; its historic working-tree snapshots are not statements about the current checkout.
+Repository: `rayls-enygma-public-testnet-research` (public). The current public `main` branch points to `3424be4` ("Merge docs/public-documentation-review into main", 22 Nov 2026), which merges the documentation branch `3c442be` on top of the Phase 1 restructure `deb3d09` ("Restructure repo presentation (Phase 1)", 22 Nov 2026). This index records that restructure and the repository state described by the cited evidence; its historic working-tree snapshots are not statements about the current checkout.
 
 Start with [README.md](README.md) for the findings and repository map. Use [REPRODUCE.md](REPRODUCE.md) to verify saved evidence or repeat checks, and [RESEARCH-TRAIL.md](RESEARCH-TRAIL.md) for the chronological record.
 
@@ -56,13 +56,14 @@ The sections below document the repository contents and decisions recorded durin
 
 Script: `scripts/01_network_identity.py` v2.0.1, 35,650 bytes,
 SHA-256 `5ff78700346b2ebd0c1a1e14c2f615b3fd4d422bb7cbbec489b3d48743260ae0`.
-Change report: `runs/01-no-overwrite-fix-report.md`, 15,329 bytes,
-SHA-256 `435c75d289b172a69…`. Runs guide: `runs/README.md`, 7,705 bytes,
+Change report: `runs/01-no-overwrite-fix-report.md`, 15,432 bytes,
+SHA-256 `2ccd1b66e4946e2f…` (English translation, 23 Nov 2026; Indonesian
+source retained privately, SHA-256 `435c75d289b172a69…`). Runs guide: `runs/README.md`, 7,705 bytes,
 SHA-256 `4e8fa10506a679d4a…`.
 
 | run | script | result | evidence |
 |---|---|---|---|
-| `runs/20261121T054711Z/` | v1.0.0 | PASS 9/9 | raw `2131d690…`, CSV `156c0b71…`, metadata `8d4e6011…`, checksums file `7b730708…`, verification report `aa544d47…`, combined report `bc7692ef…`, script copy `39caa42b…` (v1 manifest uses bare filenames — verify individually, see `runs/README.md`) |
+| `runs/20261121T054711Z/` | v1.0.0 | PASS 9/9 | raw `2131d690…`, CSV `156c0b71…`, metadata `8d4e6011…`, checksums file `7b730708…`, verification report `aa544d47…`, combined report `2cbdc977…` (English translation, 23 Nov 2026; Indonesian source SHA-256 `bc7692ef…` retained privately), script copy `39caa42b…` (v1 manifest uses bare filenames — verify individually, see `runs/README.md`) |
 | `runs/20261121T063234Z/` | v2.0.1 (build `c09d88eb…`, short check names) | PASS 13/13 | manifest 5/5 OK via `sha256sum -c` from the run dir |
 | `runs/20261121T063327Z/` | v2.0.1 (build `5ff78700…`, long check names) | PASS 13/13 | manifest 5/5 OK via `sha256sum -c` from the run dir; final run |
 
@@ -76,13 +77,10 @@ Each run dir holds: `runs/<run_id>/raw-data/rpc-responses/01_network_identity_ra
 
 - `audit-reports/ENYGMA-TESTNET-AUDIT-REPORT.md` — 65,433 bytes, 617 lines,
   SHA-256 `13622c8faf80ab4c70077d8976b7d8893b34ebebe41f06f9174e3dd98ce76b10`.
-  English translation (22 Nov 2026, on Anara's instruction), used as the
-  main version in this repository from 23 Nov 2026 (verified per
-  `audit-reports/TRANSLATION-QA-REPORT.md`; this is a translation, not a
-  verbatim copy). The Indonesian original is preserved as
-  `audit-reports/ENYGMA-TESTNET-AUDIT-REPORT.id.md` (64,787 bytes,
-  SHA-256 `1d2ab730a6df4abc99af830ac1ef4e3a7d8845b3b78ee51c9a7dcda51c50c711`).
-  Provenance in `audit-reports/README.md`.
+  English version (translated from the Indonesian original on 22 Nov 2026,
+  on Anara's instruction; promoted to the main version the same evening on
+  her approval). The Indonesian original is kept in the local archive, not
+  in this repository. Provenance in `audit-reports/README.md`.
 - Coverage: contract map (§C), observable activity (§D), volume (§E),
   privacy limits (§F), experiment plan G.1–G.6 (§G), repo structure (§H),
   source/address/hash register (§I). Its conclusion (selective auditing not
@@ -140,10 +138,12 @@ Manifest `manifest.json`, 8,827 bytes, SHA-256 `0b4ba448d8517b2c…`, covers
   for provenance.
 - `subs.ass` (44 cues, `f9aa42fa…`), `build_subs.py`, `build_video_v2.py`,
   `EDIT-PLAN.md`, `QA-REPORT-V2.md`.
-- Article audit (current): `ARTICLE-AUDIT-2026-11-22-r3.md` (59,742 B,
-  `6a1be437…`) + `ARTICLE-AUDIT-2026-11-22-addendum-f17.md` (F17 split
-  F17a/F17b + pre-commit checks). Revisions r1/r2 are superseded, local
-  record only, NOT committed.
+- Article audit (current): `ARTICLE-AUDIT-2026-11-22-r3.md` (61,062 B,
+  `709565ac…`) + `ARTICLE-AUDIT-2026-11-22-addendum-f17.md` (18,593 B,
+  `f3f16550…`) (F17 split F17a/F17b + pre-commit checks). Both are the
+  English translations (23 Nov 2026) of the frozen Indonesian sources
+  (r3 SHA-256 `6a1be437…`, F17 SHA-256 `b8e64fff…`, retained privately).
+  Revisions r1/r2 are superseded, local record only, NOT committed.
 - Inputs in `raw-data/videos/`: source footage (24,777,960 B,
   `610a5cd30d…` — filename is its content hash) + VO mp3 (2,953,936 B,
   `ebb2fdda…`). **Both are LOCAL-ONLY, excluded from the public

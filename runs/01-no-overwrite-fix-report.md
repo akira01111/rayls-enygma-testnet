@@ -1,288 +1,288 @@
-# Laporan Perubahan — Modul 01: Perbaikan No-Overwrite (v1.0.0 → v2.0.0)
+# Change Report — Module 01: No-Overwrite Fix (v1.0.0 → v2.0.0)
 
-Tanggal: 21 Nov 2026 ~12:55 WIB
-Status: perbaikan selesai, belum commit/push, menunggu review kedua Anara.
-Modul 02 tidak dimulai.
+Date: 21 Nov 2026 ~12:55 WIB
+Status: fix complete, not committed/pushed, awaiting Anara's second review.
+Module 02 not started.
 
-## Masalah yang ditemukan (review Anara, 21 Nov 2026)
+## Issues found (Anara's review, 21 Nov 2026)
 
-Script v1.0.0 memakai nama file tetap dan mode write (`"w"`), sehingga
-menjalankannya ulang akan menimpa raw JSON, CSV, metadata, checksums,
-dan report dari run sebelumnya. Tidak ada identitas run, dan manifest
-checksum tidak mencakup script maupun verification report.
+Script v1.0.0 used fixed file names and write mode (`"w"`), so running
+it again would overwrite the raw JSON, CSV, metadata, checksums,
+and report from the previous run. There was no run identity, and the
+checksum manifest did not cover the script or the verification report.
 
-## Yang diubah — per poin permintaan
+## What changed — per request item
 
-### 1. Unique run ID berdasarkan timestamp UTC
-- Setiap execution membuat `run_id` dari waktu mulai dalam UTC,
-  format `YYYYMMDDTHHMMSSZ` (contoh: `20261121T054711Z`).
-- Fungsi `new_run_id()`; run ID dicatat di raw JSON, metadata, dan report.
+### 1. Unique run ID based on UTC timestamp
+- Each execution creates a `run_id` from the start time in UTC,
+  format `YYYYMMDDTHHMMSSZ` (example: `20261121T054711Z`).
+- Function `new_run_id()`; the run ID is recorded in the raw JSON, metadata, and report.
 
-### 2. Setiap run menyimpan output di lokasi berbeda
-- Semua output kini berada di `runs/<run_id>/` dengan layout yang sama
-  seperti sebelumnya di dalam direktori run itu:
+### 2. Each run stores its output in a different location
+- All output now lives in `runs/<run_id>/` with the same layout
+  as before inside that run directory:
   `raw-data/rpc-responses/`, `datasets/`, `findings/verified-facts/`,
-  plus `scripts/` untuk salinan script.
-- Tidak ada lagi penulisan ke lokasi kanonik `raw-data/`, `datasets/`,
-  `findings/` di root repo.
+  plus `scripts/` for the script copy.
+- No more writing to the canonical `raw-data/`, `datasets/`,
+  `findings/` locations at the repo root.
 
-### 3. Script menolak overwrite jika file bukti sudah ada
-- Direktori run dibuat dengan `exist_ok=False`; direktori yang sudah
-  ada tidak pernah dipakai ulang.
-- Jika `runs/<run_id>` sudah ada, run ID mendapat akhiran `-2`, `-3`,
-  dst. sehingga run baru tidak pernah menyentuh run lama.
-- Semua file ditulis dengan mode eksklusif (`"x"`, via
+### 3. Script refuses to overwrite if evidence files already exist
+- The run directory is created with `exist_ok=False`; an existing
+  directory is never reused.
+- If `runs/<run_id>` already exists, the run ID gets a `-2`, `-3`,
+  etc. suffix so a new run never touches an old run.
+- All files are written in exclusive mode (`"x"`, via
   `write_text_exclusive` / `write_bytes_exclusive` /
-  `write_json_exclusive`). Jika sebuah file sudah ada, script berhenti
-  dengan exit code 2 dan tidak menulis file lain.
-- Terbukti dengan tes terisolasi (tanpa menjalankan script): penulisan
-  kedua ke file yang sama ditolak dan isi file tidak berubah.
+  `write_json_exclusive`). If a file already exists, the script stops
+  with exit code 2 and writes no other file.
+- Proven with an isolated test (without running the script): a second
+  write to the same file is rejected and the file's contents do not change.
 
-### 4. Raw JSON tidak boleh dimodifikasi setelah capture selesai
-- Raw JSON ditulis sekali (mode `"x"`) segera setelah 4 RPC call
-  selesai, lalu langsung `chmod 0o444` (read-only).
-- Script tidak pernah membuka raw JSON untuk ditulis lagi.
-- Salinan script di dalam run dir juga `chmod 0o444`.
-- Perubahan apa pun setelahnya tetap terdeteksi lewat manifest SHA256.
+### 4. Raw JSON must not be modified after capture completes
+- Raw JSON is written once (mode `"x"`) immediately after the 4 RPC calls
+  complete, then immediately `chmod 0o444` (read-only).
+- The script never opens raw JSON for writing again.
+- The script copy inside the run dir is also `chmod 0o444`.
+- Any later change is still detected via the SHA256 manifest.
 
-### 5. SHA256 script Python dan verification report masuk ke manifest
-- `datasets/01_network_identity_checksums.sha256` kini berisi 5 entri:
-  raw JSON, metadata, CSV, salinan script, dan verification report.
-- Manifest ditulis PALING AKHIR (setelah report selesai) agar hash
-  report bisa ikut tercatat. Report sendiri mencantumkan hash raw,
-  metadata, CSV, dan script, plus catatan bahwa manifest mencakup
-  report itu sendiri.
-- Script juga menyimpan salinan byte-identik dari dirinya sendiri di
-  `runs/<run_id>/scripts/01_network_identity.py`, sehingga setiap run
-  mandiri: kode yang menghasilkannya ikut tersimpan.
+### 5. SHA256 of the Python script and verification report go into the manifest
+- `datasets/01_network_identity_checksums.sha256` now contains 5 entries:
+  raw JSON, metadata, CSV, the script copy, and the verification report.
+- The manifest is written LAST (after the report is finished) so the
+  report's hash can be recorded too. The report itself lists the raw,
+  metadata, CSV, and script hashes, plus a note that the manifest covers
+  the report itself.
+- The script also stores a byte-identical copy of itself in
+  `runs/<run_id>/scripts/01_network_identity.py`, so every run
+  is self-contained: the code that produced it is stored with it.
 
-### 6. Metadata mencatat run ID dan versi script
-- `datasets/01_network_identity_metadata.json` kini berisi `run_id`,
-  `run_dir`, `script_version` (v2.0.0), `script`, `script_copy`, dan
+### 6. Metadata records the run ID and script version
+- `datasets/01_network_identity_metadata.json` now contains `run_id`,
+  `run_dir`, `script_version` (v2.0.0), `script`, `script_copy`, and
   `script_sha256`.
-- Report juga menampilkan Run ID, Run directory, dan versi script.
+- The report also shows the Run ID, Run directory, and script version.
 
-### 7. Bukti run sebelumnya tidak dihapus atau diganti
-- Bukti run PASS 21 Nov 05:47:11 UTC dipindahkan byte-identik dari
-  lokasi kanonik ke `runs/20261121T054711Z/` (bukan disalin lalu dihapus
-  isinya — `mv`, isi byte sama).
-- SHA256 diverifikasi sama sebelum dan sesudah pemindahan:
+### 7. Evidence from previous runs is not deleted or replaced
+- Evidence from the PASS run of 21 Nov 05:47:11 UTC was moved byte-identically
+  from the canonical location to `runs/20261121T054711Z/` (moved, not copied
+  and then emptied — `mv`, same bytes).
+- SHA256 verified identical before and after the move:
   - script v1.0.0: `39caa42b31b928b814c3317ded316fbade8db498bcf7031619d272702a05be4b`
   - raw JSON: `2131d69031ca3b8e085004a807e8ebd169780c12c25b68afd1c0f3e8124fb85c`
   - CSV: `156c0b719499d212f3ba096c38b188c669463f6fd0069cf42b34aaadc4db9282`
   - metadata: `8d4e60119fce820f605007684ac834c3f50e1e1523d8a470a43405578620208f`
   - checksums: `7b730708c59c7f848fad8d2a5d5e3c7304287d081db050cb82b2f000ef5c84b6`
   - verification report: `aa544d470d734c90b154e099d50bff23bbf6cc590ca6eced83dbadc898a74eb8`
-- Raw JSON dan salinan script v1.0.0 di run dir berstatus read-only
+- The raw JSON and the v1.0.0 script copy in the run dir are read-only
   (`-r--r--r--`).
-- File gabungan (complete report) diregenerasi ke dalam run dir dengan
-  isi pengamatan yang sama; yang berubah hanya referensi path dan satu
-  catatan pemindahan/versi. File gabungan lama di
-  `findings/verified-facts/` dihapus karena sudah digantikan versi
-  run-dir.
-- Satu pengecualian yang disengaja: metadata run lama TIDAK ditambahi
-  field `run_id`/`script_version`, karena mengubahnya akan mengubah
-  hash dan merusak bukti. Run ID dan versi script run lama dicatat di
-  `runs/README.md` dan di file gabungan.
+- The combined file (complete report) was regenerated into the run dir with
+  the same observations; only path references and one move/version note changed.
+  The old combined file in
+  `findings/verified-facts/` was deleted because it had been replaced by the
+  run-dir version.
+- One deliberate exception: the old run's metadata was NOT given
+  `run_id`/`script_version` fields, because changing it would change
+  the hash and damage the evidence. The old run's run ID and script version are recorded in
+  `runs/README.md` and in the combined file.
 
-## Yang TIDAK dilakukan
-- Script v2.0.0 TIDAK dijalankan ulang (tidak ada run baru). Yang
-  dicek: `python3 -m py_compile` (lolos) dan tes logika terisolasi
-  untuk run ID, tabrakan direktori, dan penolakan overwrite (lolos,
-  tanpa network dan tanpa menyentuh bukti).
-- Hasil pengamatan sebelumnya TIDAK diubah (chain ID, blok, hash,
-  timestamp, dan status PASS tetap sama).
-- TIDAK ada commit atau push.
-- Modul 02 TIDAK dimulai.
+## What was NOT done
+- Script v2.0.0 was NOT re-run (no new run). What was
+  checked: `python3 -m py_compile` (passed) and an isolated logic test
+  for run ID, directory collision, and overwrite rejection (passed,
+  without network and without touching evidence).
+- Previous observations were NOT changed (chain ID, block, hashes,
+  timestamps, and PASS status remain the same).
+- NO commit or push.
+- Module 02 was NOT started.
 
-## Verifikasi yang dilakukan
+## Verification performed
 1. `python3 -m py_compile scripts/01_network_identity.py` — OK.
-2. Tes terisolasi (import modul, tanpa network):
-   - format run ID `YYYYMMDDTHHMMSSZ` — OK;
-   - direktori run yang sudah ada → akhiran `-2` — OK;
-   - run ID bebas dipakai apa adanya — OK;
-   - penulisan teks kedua ke file yang sama ditolak, isi tidak berubah — OK;
-   - penulisan bytes kedua ditolak — OK.
-3. SHA256 keenam file bukti sama persis sebelum dan sesudah pemindahan
-   (daftar di atas).
-4. `git status`: hanya file baru yang belum terlacak (`runs/`,
-   `scripts/01_network_identity.py`); tidak ada commit/push.
+2. Isolated test (import the module, no network):
+   - run ID format `YYYYMMDDTHHMMSSZ` — OK;
+   - existing run directory → `-2` suffix — OK;
+   - run ID usable as-is — OK;
+   - second text write to the same file rejected, contents unchanged — OK;
+   - second bytes write rejected — OK.
+3. SHA256 of all six evidence files identical before and after the move
+   (list above).
+4. `git status`: only new untracked files (`runs/`,
+   `scripts/01_network_identity.py`); no commit/push.
 
-## File yang berubah / ditambah
-- Diubah: `scripts/01_network_identity.py` (v1.0.0 → v2.0.0, 23.497 byte).
-- Dipindah (byte-identik): 6 file bukti run 20261121T054711Z ke
-  `runs/20261121T054711Z/` + salinan script v1.0.0 ke
+## Files changed / added
+- Changed: `scripts/01_network_identity.py` (v1.0.0 → v2.0.0, 23,497 bytes).
+- Moved (byte-identical): 6 evidence files of run 20261121T054711Z to
+  `runs/20261121T054711Z/` + v1.0.0 script copy to
   `runs/20261121T054711Z/scripts/`.
-- Diregenerasi: `runs/20261121T054711Z/findings/verified-facts/01_network_identity_complete_report.md`
-  (33.445 byte; path diperbarui + catatan pemindahan).
-- Ditambah: `runs/README.md` (layout run + tabel run).
-- Dihapus: `findings/verified-facts/01_network_identity_complete_report.md`
-  (versi lama, sudah digantikan versi run-dir).
-- Ditambah: file laporan ini, `01-no-overwrite-fix-report.md`.
+- Regenerated: `runs/20261121T054711Z/findings/verified-facts/01_network_identity_complete_report.md`
+  (33,445 bytes; paths updated + move note).
+- Added: `runs/README.md` (run layout + run table).
+- Deleted: `findings/verified-facts/01_network_identity_complete_report.md`
+  (old version, replaced by the run-dir version).
+- Added: this report file, `01-no-overwrite-fix-report.md`.
 
-## Catatan
-- File gabungan untuk review saat ini berformat Markdown (.md). Jika
-  Anara menginginkan ekspor PDF sungguhan dari file gabungan itu,
-  tinggal diminta — belum dibuat.
-- Perilaku run berikutnya: `python3 scripts/01_network_identity.py`
-  akan membuat `runs/<timestamp-UTC-sekarang>/` yang baru dan tidak
-  menyentuh `runs/20261121T054711Z/` sama sekali.
+## Notes
+- The combined file for review is currently in Markdown (.md) format. If
+  Anara wants a real PDF export of that combined file,
+  just ask — not made yet.
+- Next run behavior: `python3 scripts/01_network_identity.py`
+  will create a new `runs/<current-UTC-timestamp>/` and will not
+  touch `runs/20261121T054711Z/` at all.
 
-## Pembaruan — 21 Nov 2026 (review kedua Anara)
+## Update — 21 Nov 2026 (Anara's second review)
 
-Review kedua Anara (21 Nov 2026 ~13:18 WIB): hasil umum bagus, data run
-pertama PASS 9/9 dan perbaikan no-overwrite sudah dilakukan. Sebelum
-commit/push, diminta tugas A–D di bawah. Belum ada commit/push.
-Modul 02 tidak dimulai.
+Anara's second review (21 Nov 2026 ~13:18 WIB): overall results good, first run
+data PASS 9/9 and the no-overwrite fix done. Before
+commit/push, tasks A–D below were requested. No commit/push yet.
+Module 02 not started.
 
-### A. Verifikasi checksum sumber (tugas A)
+### A. Source checksum verification (task A)
 
-- Perintah yang diminta dijalankan dari root repo: manifest tercetak,
-  tetapi `sha256sum -c datasets/01_network_identity_checksums.sha256`
-  dari dalam `runs/20261121T054711Z/` GAGAL dengan "No such file or
-  directory" untuk ketiga file. Penyebab: manifest v1.0.0 memakai nama
-  file telanjang (tanpa path), sedangkan file berada di
-  `raw-data/rpc-responses/` dan `datasets/`. Manifest v1.0.0 tidak
-  bisa diverifikasi langsung dengan `sha256sum -c` dari direktori
-  mana pun — ini cacat format manifest v1.0.0, bukan kerusakan bukti.
-- Verifikasi pengganti (tidak mengubah file): keenam file lama dihitung
-  SHA256-nya dan dicocokkan dengan daftar hash di laporan ini (§7) —
-  keenamnya OK (script v1.0.0, raw JSON, CSV, metadata, checksums,
-  verification report). Ketiga entri manifest juga dicocokkan satu per
-  satu dengan file sebenarnya — ketiganya OK.
-- Manifest v2.0.0 ke atas memakai path relatif terhadap run dir
-  (5 entri) dan bisa diverifikasi langsung dengan `sha256sum -c` dari
-  dalam run dir (lihat `runs/README.md`).
+- The requested command was run from the repo root: the manifest printed,
+  but `sha256sum -c datasets/01_network_identity_checksums.sha256`
+  from inside `runs/20261121T054711Z/` FAILED with "No such file or
+  directory" for all three files. Cause: the v1.0.0 manifest uses bare
+  file names (no path), while the files live in
+  `raw-data/rpc-responses/` and `datasets/`. The v1.0.0 manifest cannot
+  be verified directly with `sha256sum -c` from any
+  directory — this is a v1.0.0 manifest format defect, not evidence damage.
+- Replacement verification (without changing any file): the SHA256 of all six old files was computed
+  and matched against the hash list in this report (§7) —
+  all six OK (script v1.0.0, raw JSON, CSV, metadata, checksums,
+  verification report). The three manifest entries were also matched one by
+  one against the actual files — all three OK.
+- Manifest v2.0.0 and later uses paths relative to the run dir
+  (5 entries) and can be verified directly with `sha256sum -c` from
+  inside the run dir (see `runs/README.md`).
 
-### B. Script v2.0.1 (tugas B)
+### B. Script v2.0.1 (task B)
 
-- Versi baru: `2.0.1` (patch atas 2.0.0). Data run v1.0.0 TIDAK diubah.
-- Validasi respons JSON-RPC (baru): setiap respons diperiksa — versi
-  `jsonrpc` harus `"2.0"`, `id` respons harus sama dengan `id`
-  request, tidak ada objek `error`, field `result` harus ada, dan
-  result harus berbentuk sesuai metode (hex string untuk
-  eth_chainId/eth_blockNumber; objek blok dengan number/hash/timestamp
-  untuk eth_getBlockByNumber). Hasil validasi dicatat per call di raw
-  JSON (`validation: {ok, problems}`) dan sebagai 4 check
-  `response_valid_*` baru. Total check kini 13 (sebelumnya 9).
-- Validasi hash penuh (baru): hash harus `0x` + tepat 64 digit hex
-  (`is_full_hash`); hash pendek atau bukan hex membuat check FAIL
-  dengan detail yang menyebut nilainya.
-- Nama check drift diperjelas (diubah): `block_number_matches_latest_block`
-  → `block_number_within_drift_of_latest_block`. Nama lama memberi kesan
-  kedua angka harus sama persis; nyatanya check mengizinkan blok latest
-  0–10 blok di depan, tidak pernah di belakang. Detail check menyebut
-  batasnya secara eksplisit.
-- Penanganan malformed response / nilai tidak valid (baru): semua parsing
-  lewat helper aman (`parse_hex_int`, `is_full_hash`,
-  `block_timestamp_iso`) yang mengembalikan None, bukan exception.
-  Evaluasi check dipindah ke fungsi `evaluate()` yang tidak pernah raise
-  atas data malformed: nilai tidak valid menjadi FAIL dengan detail jelas
-  (mis. "hash is not a full 64-hex hash", "cannot compare"), dan run
-  tetap menulis semua output dengan status FAIL (exit 1).
-- Klarifikasi raw JSON (baru): docstring + report menjelaskan raw JSON
-  adalah struktur response yang ditangkap dan diserialisasi (objek
-  request + respons JSON yang sudah di-parse + metadata transport),
-  BUKAN byte-level HTTP capture (tidak ada byte HTTP mentah, header,
-  atau data TLS).
-- Root path arsip (baru): `find_repo_root()` berjalan naik dari file
-  script sampai menemukan direktori yang berisi `scripts/` DAN `runs/`.
-  Salinan arsip yang dijalankan dari `runs/<run_id>/scripts/` tetap
-  menemukan root repo dan menulis run baru di `runs/` repo, tidak pernah
-  di dalam run arsip. Jika tidak ditemukan, script menolak jalan
-  (exit 2) dengan pesan jelas.
-- Metadata kini juga mencatat `checks_total` dan `checks_passed`.
-- Tes terisolasi (tanpa network, tanpa menyentuh bukti): 39/39 lolos —
-  validasi respons (baik/salah id/salah versi/error object/result
-  hilang/result bukan hex/blok null/blok bukan dict/hash pendek/
-  transport gagal/respons bukan dict/HTTP 500), parsing aman,
-  `evaluate()` dengan data bagus (PASS 13/13), data sampah (FAIL tanpa
-  exception), semua call mati (FAIL, 0 lolos), root path (live, arsip,
-  di luar repo), run ID, tabrakan direktori, penolakan overwrite.
-  `python3 -m py_compile` lolos. Script v2.0.1: 35.544 byte.
+- New version: `2.0.1` (patch on 2.0.0). v1.0.0 run data NOT changed.
+- JSON-RPC response validation (new): every response is checked — the
+  `jsonrpc` version must be `"2.0"`, the response `id` must equal the
+  request `id`, no `error` object, the `result` field must exist, and
+  the result must be shaped per the method (hex string for
+  eth_chainId/eth_blockNumber; a block object with number/hash/timestamp
+  for eth_getBlockByNumber). Validation results are recorded per call in the raw
+  JSON (`validation: {ok, problems}`) and as 4 new
+  `response_valid_*` checks. Total checks now 13 (previously 9).
+- Full hash validation (new): a hash must be `0x` + exactly 64 hex digits
+  (`is_full_hash`); a short or non-hex hash makes the check FAIL
+  with a detail naming its value.
+- Drift check name clarified (changed): `block_number_matches_latest_block`
+  → `block_number_within_drift_of_latest_block`. The old name suggested
+  the two numbers must be exactly equal; in fact the check allows the latest block
+  0–10 blocks ahead, never behind. The check detail states
+  the bound explicitly.
+- Malformed response / invalid value handling (new): all parsing
+  goes through safe helpers (`parse_hex_int`, `is_full_hash`,
+  `block_timestamp_iso`) that return None instead of raising.
+  Check evaluation moved into an `evaluate()` function that never raises
+  on malformed data: an invalid value becomes FAIL with a clear detail
+  (e.g. "hash is not a full 64-hex hash", "cannot compare"), and the run
+  still writes all output with FAIL status (exit 1).
+- Raw JSON clarification (new): the docstring + report explain that raw JSON
+  is the captured-and-serialized response structure (the
+  request object + already-parsed JSON response + transport metadata),
+  NOT a byte-level HTTP capture (no raw HTTP bytes, headers,
+  or TLS data).
+- Archive root path (new): `find_repo_root()` walks up from the script
+  file until it finds a directory containing both `scripts/` AND `runs/`.
+  An archive copy run from `runs/<run_id>/scripts/` still
+  finds the repo root and writes a new run in the repo's `runs/`, never
+  inside the archive run. If not found, the script refuses to run
+  (exit 2) with a clear message.
+- Metadata now also records `checks_total` and `checks_passed`.
+- Isolated test (no network, without touching evidence): 39/39 passed —
+  response validation (good/wrong id/wrong version/error object/missing
+  result/non-hex result/null block/non-dict block/short hash/
+  transport failure/non-dict response/HTTP 500), safe parsing,
+  `evaluate()` with good data (PASS 13/13), garbage data (FAIL without
+  exception), all calls dead (FAIL, 0 passed), root path (live, archive,
+  outside repo), run ID, directory collision, overwrite rejection.
+  `python3 -m py_compile` passed. Script v2.0.1: 35,544 bytes.
 
-### C. Dokumentasi (tugas C)
+### C. Documentation (task C)
 
-- `runs/README.md`: dibedakan file yang dibuat otomatis oleh script
-  (6 file; 5 di antaranya tercakup manifest) dengan combined review
-  report (dibuat proses terpisah, BUKAN oleh script, TIDAK tercakup
-  manifest, hanya salinan baca). Ditambah instruksi verifikasi manifest
-  (`sha256sum -c` dari dalam run dir) dan penjelasan bahwa manifest
-  tidak meng-hash dirinya sendiri, plus catatan cacat format manifest
-  v1.0.0 (nama file telanjang).
-- Catatan pembaruan ini: PDF gabungan SUDAH diekspor pada 21 November
-  2026 — 9 PDF di `pdf/` (file gabungan 16 halaman, script v2.0.0
-  11 halaman, raw JSON 4 halaman, laporan perubahan 3 halaman,
-  verification report 2 halaman, sisanya 1 halaman). Semua lolos gate
-  render dan dicek isi + halamannya. Catatan lama di § Catatan ("PDF
-  gabungan belum dibuat") tetap dipertahankan sebagai riwayat dan kini
-  sudah tidak berlaku.
-- Seluruh catatan historis di laporan ini dipertahankan; bagian ini
-  hanya menambah, tidak menulis ulang.
+- `runs/README.md`: distinguishes files created automatically by the script
+  (6 files; 5 of them covered by the manifest) from the combined review
+  report (made by a separate process, NOT by the script, NOT covered by
+  the manifest, read-only copy). Added manifest verification instructions
+  (`sha256sum -c` from inside the run dir) and an explanation that the manifest
+  does not hash itself, plus a note on the v1.0.0 manifest format defect
+  (bare file names).
+- This update note: the combined PDF HAS been exported on 21 November
+  2026 — 9 PDFs in `pdf/` (combined file 16 pages, script v2.0.0
+  11 pages, raw JSON 4 pages, change report 3 pages,
+  verification report 2 pages, the rest 1 page each). All passed the
+  render gate and had their content + page counts checked. The old note in § Notes ("PDF
+  combined not yet made") is kept as history and is now
+  no longer valid.
+- All historical notes in this report are kept; this section
+  only adds, it does not rewrite.
 
-### D. Run validasi v2.0.1 (tugas D)
+### D. v2.0.1 validation run (task D)
 
-- Dua run RPC read-only (hanya eth_chainId, eth_blockNumber,
-  eth_getBlockByNumber; tanpa transaksi testnet, tanpa wallet):
+- Two read-only RPC runs (only eth_chainId, eth_blockNumber,
+  eth_getBlockByNumber; no testnet transactions, no wallet):
   - Run 1 — `20261121T063234Z` (06:32:34 UTC): PASS 13/13. Chain ID
-    7295799, blok latest 24805207 (drift +5), genesis hash sama dengan
-    run lama. Manifest 5/5 OK (`sha256sum -c` dari run dir).
+    7295799, latest block 24805207 (drift +5), genesis hash same as the
+    old run. Manifest 5/5 OK (`sha256sum -c` from the run dir).
   - Run 2 (final) — `20261121T063327Z` (06:33:27 UTC): PASS 13/13.
-    Chain ID 7295799, blok latest 24805303 (drift +4), genesis hash
-    sama dengan run lama. Manifest 5/5 OK. Script live dan salinan
-    script di run dir memiliki hash yang sama
+    Chain ID 7295799, latest block 24805303 (drift +4), genesis hash
+    same as the old run. Manifest 5/5 OK. The live script and the script
+    copy in the run dir have the same hash
     (`5ff78700346b2ebd0c1a1e14c2f615b3fd4d422bb7cbbec489b3d48743260ae0`).
-- Koreksi nama check di antara kedua run (bukan perubahan perilaku):
-  run 1 memakai nama pendek `response_valid_latest` /
-  `response_valid_genesis`, sedangkan docstring v2.0.1 sudah menulis
-  nama panjang. Kode diselaraskan ke docstring (label saja) dan
-  validasi diulang sebagai run 2. Tes terisolasi diperbarui (40/40
-  lolos, termasuk assert nama check persis).
-- Bukti run lama TIDAK tersentuh: keenam hash run 20261121T054711Z
-  masih sama dengan daftar §7; manifest run 1 juga masih 5/5 OK
-  setelah run 2 dibuat.
-- Retry tercatat di raw JSON run final: eth_chainId 3 attempt,
-  eth_getBlockByNumber latest 2 attempt, sisanya 1 attempt
-  (proxy sempat memutus koneksi; semua berhasil).
-- Tidak ada combined report untuk run baru (dibuat proses terpisah,
-  bila diminta).
-- Belum ada commit/push. Modul 02 tidak dimulai.
+- Check name correction between the two runs (not a behavior change):
+  run 1 used the short names `response_valid_latest` /
+  `response_valid_genesis`, while the v2.0.1 docstring already wrote
+  the long names. The code was aligned to the docstring (labels only) and
+  validation was repeated as run 2. The isolated test was updated (40/40
+  passed, including an assert on the exact check names).
+- Old run evidence NOT touched: all six hashes of run 20261121T054711Z
+  still match the §7 list; run 1's manifest is still 5/5 OK
+  after run 2 was created.
+- Retries recorded in the final run's raw JSON: eth_chainId 3 attempts,
+  eth_getBlockByNumber latest 2 attempts, the rest 1 attempt
+  (the proxy briefly dropped the connection; all succeeded).
+- No combined report for the new runs (made by a separate process,
+  if requested).
+- No commit/push yet. Module 02 not started.
 
-## Pembaruan — 21 Nov 2026 (review ketiga Anara)
+## Update — 21 Nov 2026 (Anara's third review)
 
-Review ketiga Anara (21 Nov 2026 ~14:17 WIB): paket PDF riwayat lengkap
-dan struktur audit diterima. Sebelum review commit, diminta klarifikasi
-ukuran build di bawah. Belum ada commit/push. Modul 02 tidak dimulai.
+Anara's third review (21 Nov 2026 ~14:17 WIB): the complete Module 01 history PDF package
+and audit structure accepted. Before commit review, the
+build size clarification below was requested. No commit/push yet. Module 02 not started.
 
-### Klarifikasi ukuran build v2.0.1
+### v2.0.1 build size clarification
 
-- Angka "Script v2.0.1: 35.544 byte" di §B di atas mengacu pada build
-  yang dipakai run pertama v2.0.1, `20261121T063234Z`: salinan script
-  `runs/20261121T063234Z/scripts/01_network_identity.py`, 35.544 byte,
+- The figure "Script v2.0.1: 35,544 bytes" in §B above refers to the build
+  used by the first v2.0.1 run, `20261121T063234Z`: the script copy
+  `runs/20261121T063234Z/scripts/01_network_identity.py`, 35,544 bytes,
   SHA256
   `c09d88eb835ba69d9a6bf4ee8d976584a709b97d140fd379b39385f5050701e0`.
-- Build yang dipakai run final v2.0.1, `20261121T063327Z`, berukuran
-  35.650 byte: salinan script
+- The build used by the final v2.0.1 run, `20261121T063327Z`, is
+  35,650 bytes: the script copy
   `runs/20261121T063327Z/scripts/01_network_identity.py`, SHA256
   `5ff78700346b2ebd0c1a1e14c2f615b3fd4d422bb7cbbec489b3d48743260ae0`.
-  Script live (`scripts/01_network_identity.py`) byte-identik dengan
-  build ini (35.650 byte, hash sama).
-- Selisih 106 byte adalah perubahan label dua nama check
+  The live script (`scripts/01_network_identity.py`) is byte-identical to
+  this build (35,650 bytes, same hash).
+- The 106-byte difference is the label change of the two check names
   (`response_valid_latest` / `response_valid_genesis` →
   `response_valid_eth_getBlockByNumber_latest` /
-  `response_valid_eth_getBlockByNumber_genesis`); bukan perubahan
-  perilaku validasi. Kedua hash script tetap dicantumkan di atas dan
-  di `runs/README.md` (bagian "Two v2.0.1 script builds"), dan keduanya
-  tercakup manifest run masing-masing (terverifikasi 5/5 OK).
+  `response_valid_eth_getBlockByNumber_genesis`); not a validation
+  behavior change. Both script hashes are still listed above and
+  in `runs/README.md` (section "Two v2.0.1 script builds"), and both
+  are covered by their respective run manifests (verified 5/5 OK).
 
-### Erratum docstring raw JSON
+### Raw JSON docstring erratum
 
-- Documentation erratum untuk kalimat terakhir docstring v2.0.1
-  ("Raw data is written exactly as received...") dicatat di
-  `runs/README.md` (bagian "Documentation erratum — v2.0.1 docstring
-  (raw data wording)"), beserta kalimat pengganti yang direkomendasikan
-  untuk versi berikutnya. Script v2.0.1 dan salinan historisnya tidak
-  diubah.
-- PDF riwayat lengkap Modul 01 dibuat ulang dalam putaran ini dengan
-  `runs/README.md` terbaru (7.705 byte) dan laporan perubahan ini,
-  termasuk erratum tersebut; file bukti tidak diubah.
+- A documentation erratum for the last sentence of the v2.0.1 docstring
+  ("Raw data is written exactly as received...") is recorded in
+  `runs/README.md` (section "Documentation erratum — v2.0.1 docstring
+  (raw data wording)"), together with the recommended replacement sentence
+  for the next version. Script v2.0.1 and its historical copies are
+  unchanged.
+- The complete Module 01 history PDF was regenerated in this round with
+  the latest `runs/README.md` (7,705 bytes) and this change report,
+  including that erratum; evidence files were not changed.
