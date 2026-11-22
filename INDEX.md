@@ -74,10 +74,15 @@ Each run dir holds: `runs/<run_id>/raw-data/rpc-responses/01_network_identity_ra
 
 ## 3. Initial audit report (21 Nov 2026)
 
-- `audit-reports/ENYGMA-TESTNET-AUDIT-REPORT.md` — 64,787 bytes, 617 lines,
-  SHA-256 `1d2ab730a6df4abc99af830ac1ef4e3a7d8845b3b78ee51c9a7dcda51c50c711`.
-  Verbatim copy of `~/workspace/rayls-enygma-audit/ENYGMA-TESTNET-AUDIT-REPORT.md`
-  (same hash; `cmp` byte-identical). Provenance in `audit-reports/README.md`.
+- `audit-reports/ENYGMA-TESTNET-AUDIT-REPORT.md` — 65,433 bytes, 617 lines,
+  SHA-256 `13622c8faf80ab4c70077d8976b7d8893b34ebebe41f06f9174e3dd98ce76b10`.
+  English translation (22 Nov 2026, on Anara's instruction), used as the
+  main version in this repository from 23 Nov 2026 (verified per
+  `audit-reports/TRANSLATION-QA-REPORT.md`; this is a translation, not a
+  verbatim copy). The Indonesian original is preserved as
+  `audit-reports/ENYGMA-TESTNET-AUDIT-REPORT.id.md` (64,787 bytes,
+  SHA-256 `1d2ab730a6df4abc99af830ac1ef4e3a7d8845b3b78ee51c9a7dcda51c50c711`).
+  Provenance in `audit-reports/README.md`.
 - Coverage: contract map (§C), observable activity (§D), volume (§E),
   privacy limits (§F), experiment plan G.1–G.6 (§G), repo structure (§H),
   source/address/hash register (§I). Its conclusion (selective auditing not
