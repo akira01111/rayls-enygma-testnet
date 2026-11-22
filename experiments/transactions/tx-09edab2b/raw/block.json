@@ -1,0 +1,133 @@
+{
+  "calls": [
+    {
+      "attempts": 1,
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x17ad048",
+        false
+      ],
+      "request": {
+        "id": 5,
+        "jsonrpc": "2.0",
+        "method": "eth_getBlockByNumber",
+        "params": [
+          "0x17ad048",
+          false
+        ]
+      },
+      "response": {
+        "id": 5,
+        "jsonrpc": "2.0",
+        "result": {
+          "baseFeePerGas": "0xb2d05e000",
+          "blobGasUsed": "0x0",
+          "difficulty": "0x0",
+          "excessBlobGas": "0x0",
+          "extraData": "0x",
+          "gasLimit": "0x1dcd6500",
+          "gasUsed": "0x1414a1",
+          "hash": "0x8fadb833ba802fb1c2218a544b21eeb255d94807021dcd6f99c8ef4a06e8201b",
+          "logsBloom": "0x04000000000000040000000000000000000020000000000000041000000000004000000000000000400000000000080000000000000000004000000000000000000000000000400000000000000000100000000000000000000000000000000000000000020000000000000000000800000000000000000000000000000400000000100000000000000000010000000000000000000000080000000002000000000000000000100000000100080000000000000000000000004000000000000000000000000000000000000000000000040400000000008000001800000020000000000000000000000000000000000800000000008000000000000000000000",
+          "miner": "0xa6869d49b79a388b1fe840b15d845dd653820290",
+          "mixHash": "0x79c4499ac55511194bbba2c3c5fc7383684a258728260c9f1aaea4c8e2a41364",
+          "nonce": "0x000000fc0004c766",
+          "number": "0x17ad048",
+          "parentBeaconBlockRoot": "0x8192d9472347e1be1cd0db3d696ffeb9ba5b01a59f2980612e561f6164e31f28",
+          "parentHash": "0xcbb74ba6027aa57c24c296d4991fb8006b5c89e81bd79b105da18b3dd96d7532",
+          "receiptsRoot": "0xbb4d5be759dfb1268f09d2cd697b905e03c3f78776f45b1cf1dda79c256d7d3b",
+          "requestsHash": "0xf85690dde612f0a7576b79feac938d3ad2112422b70f8cfe34f8bba986470c4c",
+          "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+          "size": "0x15ac",
+          "stateRoot": "0x7f87468ef10c0e32490205544ab10a7ad432b589baa236f2d5f10693851bc646",
+          "timestamp": "0x6b01671a",
+          "transactions": [
+            "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+          ],
+          "transactionsRoot": "0x04de1c7808c2f04bfd218a13966d5524ac5d7ce0125c42a628bcaa0d41e2c3b4",
+          "uncles": [],
+          "withdrawals": [],
+          "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+        }
+      },
+      "validation": {
+        "ok": true,
+        "problems": []
+      }
+    }
+  ],
+  "chain_id_expected": 7295799,
+  "checks": [
+    {
+      "detail": "eth_chainId -> '0x6f5337' (parsed 7295799)",
+      "name": "chain_id_is_7295799",
+      "passed": true
+    },
+    {
+      "detail": "eth_getTransactionByHash returned a tx object",
+      "name": "transaction_found",
+      "passed": true
+    },
+    {
+      "detail": "tx.hash -> '0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb'",
+      "name": "transaction_hash_matches_target",
+      "passed": true
+    },
+    {
+      "detail": "tx.blockNumber -> '0x17ad048' (parsed 24825928)",
+      "name": "transaction_block_is_24825928",
+      "passed": true
+    },
+    {
+      "detail": "eth_getTransactionReceipt returned a receipt object",
+      "name": "receipt_found",
+      "passed": true
+    },
+    {
+      "detail": "receipt.status -> '0x1'",
+      "name": "receipt_status_success",
+      "passed": true
+    },
+    {
+      "detail": "receipt.blockNumber -> '0x17ad048' (parsed 24825928)",
+      "name": "receipt_block_is_24825928",
+      "passed": true
+    },
+    {
+      "detail": "receipt block 24825928 vs tx block 24825928",
+      "name": "receipt_block_matches_tx_block",
+      "passed": true
+    },
+    {
+      "detail": "receipt.to '0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2' vs tx.to '0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2'",
+      "name": "receipt_to_matches_tx_to",
+      "passed": true
+    },
+    {
+      "detail": "receipt.transactionHash -> '0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb'",
+      "name": "receipt_txhash_matches_target",
+      "passed": true
+    },
+    {
+      "detail": "receipt.logs is a list of 7 entries",
+      "name": "receipt_logs_present",
+      "passed": true
+    },
+    {
+      "detail": "block.number -> '0x17ad048' (parsed 24825928)",
+      "name": "block_number_matches_receipt",
+      "passed": true
+    },
+    {
+      "detail": "block.hash '0x8fadb833ba802fb1c2218a544b21eeb255d94807021dcd6f99c8ef4a06e8201b' vs receipt.blockHash '0x8fadb833ba802fb1c2218a544b21eeb255d94807021dcd6f99c8ef4a06e8201b'",
+      "name": "block_hash_matches_receipt",
+      "passed": true
+    }
+  ],
+  "expected_block": 24825928,
+  "retrieved_at_utc": "2026-11-21T16:15:18Z",
+  "rpc_url": "https://testnet-rpc.rayls.com",
+  "script": "scripts/tx_audit_09edab2b.py",
+  "script_version": "1.1.0",
+  "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+}

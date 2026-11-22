@@ -1,0 +1,150 @@
+{
+  "module": "01_network_identity",
+  "network": "Rayls Enygma Public Testnet",
+  "rpc_endpoint": "https://testnet-rpc.rayls.com",
+  "retrieved_at_utc": "2026-11-21T05:47:11Z",
+  "calls": [
+    {
+      "method": "eth_chainId",
+      "params": [],
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "eth_chainId",
+        "params": []
+      },
+      "retrieved_at_utc": "2026-11-21T05:47:11Z",
+      "http_status": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": "0x6f5337"
+      },
+      "error": null,
+      "attempts": 1
+    },
+    {
+      "method": "eth_blockNumber",
+      "params": [],
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "eth_blockNumber",
+        "params": []
+      },
+      "retrieved_at_utc": "2026-11-21T05:47:12Z",
+      "http_status": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": "0x17a6bcb"
+      },
+      "error": null,
+      "attempts": 1
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "latest",
+        false
+      ],
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "eth_getBlockByNumber",
+        "params": [
+          "latest",
+          false
+        ]
+      },
+      "retrieved_at_utc": "2026-11-21T05:47:13Z",
+      "http_status": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "hash": "0x7c1ffb4e9dfb5eb64869e071c7a3f2ba0ffb01e894985c93ed9b3e0b90c3dee5",
+          "parentHash": "0xfc5e203d287767b5dd96f1a51e55f5e9dc262311643fe33147d8acde16b7ca94",
+          "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+          "miner": "0xcf25e900fdb7523e4c81466d9c453cfdddb4a0ee",
+          "stateRoot": "0x8ec032638838b139b87a5ae32c6b778d7bd102abeb14521c09e3b4b5ac429053",
+          "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "difficulty": "0x0",
+          "number": "0x17a6bcc",
+          "gasLimit": "0x1dcd6500",
+          "gasUsed": "0x0",
+          "timestamp": "0x6b013062",
+          "extraData": "0x",
+          "mixHash": "0x9df252cadf2e30c59f774b35a94d73d6e37a4781d343f81d4955bb4272698579",
+          "nonce": "0x000000fc0003fe8e",
+          "baseFeePerGas": "0xb2d05e000",
+          "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "blobGasUsed": "0x0",
+          "excessBlobGas": "0x0",
+          "parentBeaconBlockRoot": "0x9df252cadf2e30c59f774b35a94d73d6e37a4781d343f81d4955bb4272698579",
+          "requestsHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "size": "0x26d",
+          "uncles": [],
+          "transactions": [],
+          "withdrawals": []
+        }
+      },
+      "error": null,
+      "attempts": 1
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x0",
+        false
+      ],
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "method": "eth_getBlockByNumber",
+        "params": [
+          "0x0",
+          false
+        ]
+      },
+      "retrieved_at_utc": "2026-11-21T05:47:14Z",
+      "http_status": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {
+          "hash": "0x33b818f13cab5c2e3e7bb589cbd0612e78e1139f3add29f0d5f0d6a03a5c9545",
+          "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+          "miner": "0x0000000000000000000000000000000000000000",
+          "stateRoot": "0x8f1fea565bb21693c4ad99a892c2720cdc7f7f0cbab7380d0313c6696ac47f6d",
+          "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "difficulty": "0x0",
+          "number": "0x0",
+          "gasLimit": "0x1c9c380",
+          "gasUsed": "0x0",
+          "timestamp": "0x69b2e846",
+          "extraData": "0x",
+          "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "nonce": "0x0000000000000000",
+          "baseFeePerGas": "0x7",
+          "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+          "blobGasUsed": "0x0",
+          "excessBlobGas": "0x0",
+          "parentBeaconBlockRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "requestsHash": "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": "0x264",
+          "uncles": [],
+          "transactions": [],
+          "withdrawals": []
+        }
+      },
+      "error": null,
+      "attempts": 2
+    }
+  ]
+}

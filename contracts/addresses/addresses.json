@@ -1,0 +1,252 @@
+{
+  "provenance": {
+    "source_file": "~/workspace/rayls-enygma-audit/ENYGMA-TESTNET-AUDIT-REPORT.md",
+    "source_sha256": "1d2ab730a6df4abc99af830ac1ef4e3a7d8845b3b78ee51c9a7dcda51c50c711",
+    "source_section": "C.2 contract map + C.3 EIP-1967 implementation slots",
+    "source_date": "2026-11-21",
+    "copied_to_repo": "2026-11-22",
+    "note": "Copied verbatim from the audit report. No address was invented, fixed, or normalised beyond the report's own text (checksummed case preserved as printed)."
+  },
+  "network": {
+    "chain_id": 7295799,
+    "chain_id_hex": "0x6f5337",
+    "rpc": "https://testnet-rpc.rayls.com",
+    "explorer": "https://testnet-explorer.rayls.com",
+    "demo": "https://enygma-testnet.rayls.com/"
+  },
+  "deployment_yx_active": [
+    {
+      "name": "RLS token (proxy)",
+      "address": "0x07e17E17e17E17e17e17e17E17E17E17E17e17EA",
+      "deployment": "yx",
+      "bytecode_bytes": 122,
+      "note": ""
+    },
+    {
+      "name": "RlsGasForwarder",
+      "address": "0x753cc3Abe9A1c49536ee74F1f424fCF693AAB5DD",
+      "deployment": "yx",
+      "bytecode_bytes": 4394,
+      "note": "NOT the RLS token \u2014 known trap, restated in the audit."
+    },
+    {
+      "name": "UserRegistry proxy",
+      "address": "0xA473291FFb33e2276F364fAE169f03c4406719e9",
+      "deployment": "yx",
+      "bytecode_bytes": 170,
+      "note": ""
+    },
+    {
+      "name": "SharedVaultProxy",
+      "address": "0x9C5Ad5e5Ea5b5910E7fD1E1CC7b70ce0e4bF06c2",
+      "deployment": "yx",
+      "bytecode_bytes": 170,
+      "note": ""
+    },
+    {
+      "name": "UsdrVault",
+      "address": "0x1edb224cf8637f92efadaf47ef9e70c044d75584",
+      "deployment": "yx",
+      "bytecode_bytes": 20224,
+      "note": ""
+    },
+    {
+      "name": "RlsVault",
+      "address": "0x97b5d78dbe06d8c8c843f87b5aa2d8587b890795",
+      "deployment": "yx",
+      "bytecode_bytes": 20224,
+      "note": ""
+    },
+    {
+      "name": "Verifier",
+      "address": "0xfa3a53ec650bfd4ca3e8461abce243382a1037af",
+      "deployment": "yx",
+      "bytecode_bytes": 4652,
+      "note": ""
+    },
+    {
+      "name": "GenericGroth16Verifier",
+      "address": "0xc12f06f883b757c91069f9d94065a4c673ef356a",
+      "deployment": "yx",
+      "bytecode_bytes": 2916,
+      "note": ""
+    },
+    {
+      "name": "Poseidon T3",
+      "address": "0xc29f02220d8aed5c731de4aee9d7d8d24c94ef15",
+      "deployment": "yx",
+      "bytecode_bytes": 9743,
+      "note": ""
+    },
+    {
+      "name": "Poseidon T5",
+      "address": "0x078c99bbbbf9dcf827ff085c9a4634213b18018b",
+      "deployment": "yx",
+      "bytecode_bytes": 16276,
+      "note": ""
+    },
+    {
+      "name": "Poseidon Wrapper",
+      "address": "0x0bc72bf5dd894164f7cc8f8b92c78eb7d2156f3f",
+      "deployment": "yx",
+      "bytecode_bytes": 687,
+      "note": ""
+    },
+    {
+      "name": "OwnerMultisig",
+      "address": "0xBf099175a241194C38E977735D59CCb22596d775",
+      "deployment": "yx",
+      "bytecode_bytes": 4373,
+      "note": ""
+    },
+    {
+      "name": "UserRegistryRetired",
+      "address": "0xD1d92f1B183B84Ea528211302B1eCB881EeF2770",
+      "deployment": "yx",
+      "bytecode_bytes": null,
+      "note": "Bytecode not measured; flag retired: 2026-11-10 unchanged."
+    }
+  ],
+  "deployment_bx_inactive_since_2026_11_03": [
+    {
+      "name": "RlsGasForwarder",
+      "address": "0x2ef592329B8e01320170f8f8d759d9bcA94d1066",
+      "deployment": "bx",
+      "bytecode_bytes": 4394,
+      "note": ""
+    },
+    {
+      "name": "UserRegistry proxy",
+      "address": "0x3E9435c1fe8432e21E80D7A8ab81EBfc8eC708E3",
+      "deployment": "bx",
+      "bytecode_bytes": 170,
+      "note": ""
+    },
+    {
+      "name": "UserRegistryImplementation (in bundle)",
+      "address": "0xB23124D2eE339d1E8175B9ec10D20217CE015c1C",
+      "deployment": "bx",
+      "bytecode_bytes": 14492,
+      "note": "Bundle value. Live registry bx implementation is different (see implementations)."
+    },
+    {
+      "name": "SharedVaultProxy",
+      "address": "0x94dafa3bf372cad68143ac535f845e74751d75ef",
+      "deployment": "bx",
+      "bytecode_bytes": 170,
+      "note": ""
+    },
+    {
+      "name": "TokenFactory",
+      "address": "0x7416094FFC5A1D0C2659DA0D5b81CeCc18f1BdAc",
+      "deployment": "bx",
+      "bytecode_bytes": 7274,
+      "note": ""
+    }
+  ],
+  "implementations_eip1967_slot_0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc": [
+    {
+      "proxy": "UserRegistry yx",
+      "proxy_address": "0xA473291FFb33e2276F364fAE169f03c4406719e9",
+      "implementation_live": "0x9686a3d5a9Fd2101d15888c6a09a64faFA7EE349",
+      "matches_bundle": true,
+      "note": "Upgrade executed 11 Nov 21:25:18 UTC, block 23400006, tx 0x908fdae3efbee9b058da2088eaf73f7f0031257df79953974fb87b1c5ac96fe8."
+    },
+    {
+      "proxy": "SharedVault yx",
+      "proxy_address": "0x9C5Ad5e5Ea5b5910E7fD1E1CC7b70ce0e4bF06c2",
+      "implementation_live": "0xAd9667049f14D1757D147F652c41Dc241C57091C",
+      "matches_bundle": true,
+      "note": "Upgrade executed 11 Nov 21:25:01 UTC, block 23399976, tx 0xc841126f7cf05d937967743f7db5cb80d04cf32ed1dca929aac23d952e97f3c4."
+    },
+    {
+      "proxy": "UserRegistry bx",
+      "proxy_address": "0x3E9435c1fe8432e21E80D7A8ab81EBfc8eC708E3",
+      "implementation_live": "0x66f87eaf23152bd5a155f96a85b7e5a64e3f6952",
+      "implementation_live_bytecode_bytes": 14440,
+      "matches_bundle": false,
+      "bundle_value": "0xB23124D2eE339d1E8175B9ec10D20217CE015c1C",
+      "bundle_value_bytecode_bytes": 14492,
+      "note": "MISMATCH: live implementation does not appear in the bundle at all. bx ownerCalls upgrade in the bundle was never executed on the proxy. Ticket-first before any public conclusion."
+    },
+    {
+      "proxy": "SharedVault bx",
+      "proxy_address": "0x94dafa3bf372cad68143ac535f845e74751d75ef",
+      "implementation_live": "0x8551f451a5e7dc39d82ed08195eeda16abfe60a1",
+      "implementation_live_bytecode_bytes": 23641,
+      "matches_bundle": false,
+      "bundle_value": "0xe023791669A54EC41Ef1affA2c1B44460C1943CD",
+      "note": "MISMATCH: live implementation not in bundle. bx ownerCalls upgrade never executed. Ticket-first before any public conclusion."
+    }
+  ],
+  "other_addresses": [
+    {
+      "name": "Auditor (EOA)",
+      "address": "0x71AF09966CBED4434ccA97c40Fa38B8083548B95",
+      "deployment": "other",
+      "bytecode_bytes": 0,
+      "note": "0 bytes of code = EOA (verified fact). AuditorAdded #1, 10 Nov 2026. Whether this is the Rayls Foundation fee address is UNKNOWN (see TX audit gaps)."
+    },
+    {
+      "name": "Relayer",
+      "address": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Sender of all vault/registry txs checked. Registered username rayls-relayer."
+    },
+    {
+      "name": "Multicall3",
+      "address": "0xca11bde05977b3631167028862be2a173976ca11",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Used by the relayer for shielded payments (per docs)."
+    },
+    {
+      "name": "Forwarder \"next\" (yx)",
+      "address": "0x12B6640048DEB2e8fFDa4Bc10Bb2a640B70eCA6d",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Listed in bundle (block 23395717); already used by the latest registration."
+    },
+    {
+      "name": "EnygmaDvp",
+      "address": "0x7ec57a8f97b636a4b54633df826b2a4311018996",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Appears in the new bundle; baseline did not record it \u2014 unknown whether new or only unrecorded."
+    },
+    {
+      "name": "auditorPublicKeyHash (registry yx)",
+      "address": "0x4151c50e9250f5818a53f9e48e734bd4209407d19f966ede4f7988dd4af863e5",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Value, not an address. Same as baseline."
+    },
+    {
+      "name": "USDr",
+      "address": "0x0000000000000000000000000000000000000400",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Precompile address per the bundle. Nature not checked beyond the bundle."
+    },
+    {
+      "name": "RLS token (Ethereum mainnet, NOT testnet)",
+      "address": "0xb5f7b021a78f470d31d762c1dda05ea549904fbd",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "Mainnet ERC20. Included only to prevent confusion with the testnet RLS proxy."
+    },
+    {
+      "name": "Unknown provenance (from address.json in the repo)",
+      "address": "0xd908BaeE382191D15E479589D9661A9E9b55b827",
+      "deployment": "other",
+      "bytecode_bytes": null,
+      "note": "PROVENANCE UNKNOWN. Found in the repo; origin/purpose unknown. Do NOT use as a deployment address without verification."
+    }
+  ],
+  "anomalies_recorded": [
+    "RLS token proxy EIP-1967 implementation slot contains its own address (0x07e17e17...) \u2014 not a normal EIP-1967 proxy pattern; meaning unknown, not verified further.",
+    "Beacon slot EIP-1967 (0xa3f0ad74...) = 0 for the three proxies checked \u2014 not beacon proxies (direct observation).",
+    "Full hash of the bundle registry-yx implementation tx was recorded truncated (0xe029bde6..., block 23395761) \u2014 full hash unknown."
+  ]
+}

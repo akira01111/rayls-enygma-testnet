@@ -1,0 +1,59 @@
+[Script Info]
+Title: Enygma Week 2 - Private Payment Experiment
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Liberation Sans,24,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,2,60,60,32,1
+Style: Top,Liberation Sans,24,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,8,60,60,84,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.80,0:00:03.64,Default,,0,0,0,,How do private blockchain payments actually\Nwork?
+Dialogue: 0,0:00:04.22,0:00:07.68,Default,,0,0,0,,What does a private payment actually leave\Nbehind on a public blockchain?
+Dialogue: 0,0:00:08.42,0:00:13.08,Default,,0,0,0,,I wanted to find out what really happens\Nbeyond the usual payment successful message,
+Dialogue: 0,0:00:13.66,0:00:17.99,Default,,0,0,0,,not just what the sender sees, but what the\Nreceiver gets, and what eventually appears on
+Dialogue: 0,0:00:18.03,0:00:18.86,Default,,0,0,0,,the blockchain.
+Dialogue: 0,0:00:19.62,0:00:23.74,Default,,0,0,0,,So, I tested it using two registered Enygma\Npublic testnet accounts.
+Dialogue: 0,0:00:24.30,0:00:27.62,Default,,0,0,0,,{\c&H3DC5FF&}@anara{\c&HFFFFFF&} was the sender, and {\c&H3DC5FF&}@kittynim{\c&HFFFFFF&} was the\Nreceiver.
+Dialogue: 0,0:00:28.08,0:00:32.34,Default,,0,0,0,,The sender already had {\c&H3DC5FF&}shielded $RLS{\c&HFFFFFF&}, so I\Ncould go straight to the payment process
+Dialogue: 0,0:00:32.38,0:00:34.96,Default,,0,0,0,,without performing another shield transaction.
+Dialogue: 0,0:00:35.58,0:00:41.57,Default,,0,0,0,,I opened the send page, selected the shielded\Nbalance, chose $RLS, entered {\c&H3DC5FF&}@kittynim{\c&HFFFFFF&} 's
+Dialogue: 0,0:00:41.61,0:00:44.30,Default,,0,0,0,,username, and set the amount to {\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&}.
+Dialogue: 0,0:00:44.92,0:00:47.16,Default,,0,0,0,,Before proving, I checked the fee breakdown.
+Dialogue: 0,0:00:47.84,0:00:55.40,Top,,0,0,0,,The wallet showed {\c&H3DC5FF&}3.84 $RLS{\c&HFFFFFF&} for gas, and\N{\c&H3DC5FF&}0.58 $RLS{\c&HFFFFFF&} for the Rayls Foundation fee,
+Dialogue: 0,0:00:55.44,0:00:59.58,Top,,0,0,0,,bringing the displayed total to {\c&H3DC5FF&}4.42 $RLS{\c&HFFFFFF&}.
+Dialogue: 0,0:01:00.36,0:01:04.00,Default,,0,0,0,,After confirming with my passkey, Enygma\Nstarted preparing the payment.
+Dialogue: 0,0:01:04.66,0:01:09.56,Default,,0,0,0,,It selected the notes, encrypted the payment,\Nand generated a {\c&H3DC5FF&}zero-knowledge proof{\c&HFFFFFF&} directly
+Dialogue: 0,0:01:09.60,0:01:10.40,Default,,0,0,0,,in the browser.
+Dialogue: 0,0:01:11.08,0:01:17.50,Default,,0,0,0,,The interface reported a {\c&H3DC5FF&}256-byte proof{\c&HFFFFFF&},\Ngenerated in {\c&H3DC5FF&}10 seconds{\c&HFFFFFF&} in this tab.
+Dialogue: 0,0:01:18.12,0:01:20.30,Default,,0,0,0,,And then, the transaction went through!
+Dialogue: 0,0:01:20.88,0:01:24.82,Default,,0,0,0,,{\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&} were sent privately from {\c&H3DC5FF&}@anara{\c&HFFFFFF&} to\N{\c&H3DC5FF&}@kittynim{\c&HFFFFFF&}.
+Dialogue: 0,0:01:24.86,0:01:28.78,Default,,0,0,0,,When I checked the receiver's activity, it\Nshowed {\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&} received!
+Dialogue: 0,0:01:29.36,0:01:36.06,Default,,0,0,0,,The receiver's shielded balance increased from\N{\c&H3DC5FF&}321.4{\c&HFFFFFF&} to {\c&H3DC5FF&}327.4 $RLS{\c&HFFFFFF&}.
+Dialogue: 0,0:01:36.64,0:01:44.50,Top,,0,0,0,,On the sender side, the shielded balance moved\Nfrom {\c&H3DC5FF&}14.324{\c&HFFFFFF&} to {\c&H3DC5FF&}3.908 $RLS{\c&HFFFFFF&}.
+Dialogue: 0,0:01:45.00,0:01:48.26,Default,,0,0,0,,That's a difference of {\c&H3DC5FF&}10.416 $RLS{\c&HFFFFFF&}.
+Dialogue: 0,0:01:48.80,0:01:54.58,Default,,0,0,0,,{\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&} for the payment, plus the {\c&H3DC5FF&}4.416 $RLS{\c&HFFFFFF&}\Nfee shown in the detailed activity
+Dialogue: 0,0:01:54.62,0:01:55.68,Default,,0,0,0,,explanation.
+Dialogue: 0,0:01:56.28,0:01:59.36,Default,,0,0,0,,Now, let's look at what the blockchain\Nactually recorded.
+Dialogue: 0,0:02:00.06,0:02:07.05,Default,,0,0,0,,The Explorer shows a successful {\c&H3DC5FF&}transfer V2{\c&HFFFFFF&}\Ncall to {\c&H3DC5FF&}SharedVault{\c&HFFFFFF&}, included in
+Dialogue: 0,0:02:07.09,0:02:08.90,Default,,0,0,0,,{\c&H3DC5FF&}Block 24,825,928{\c&HFFFFFF&}.
+Dialogue: 0,0:02:09.40,0:02:12.98,Default,,0,0,0,,The public transaction sender is the {\c&H3DC5FF&}Relayer{\c&HFFFFFF&},\Nnot {\c&H3DC5FF&}@anara{\c&HFFFFFF&}.
+Dialogue: 0,0:02:13.36,0:02:15.82,Default,,0,0,0,,And there's another detail worth noticing.
+Dialogue: 0,0:02:16.21,0:02:19.20,Default,,0,0,0,,The value field shows {\c&H3DC5FF&}0 USDR{\c&HFFFFFF&}.
+Dialogue: 0,0:02:19.64,0:02:22.02,Default,,0,0,0,,That isn't the amount of the private $RLS\Npayment.
+Dialogue: 0,0:02:22.80,0:02:26.66,Default,,0,0,0,,The receiver's activity is where we can\Nconfirm the {\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&} received.
+Dialogue: 0,0:02:27.10,0:02:32.24,Default,,0,0,0,,The Explorer explanation also shows\Ncommitments and encrypted notes, rather than a
+Dialogue: 0,0:02:32.28,0:02:38.04,Default,,0,0,0,,conventional public transfer displaying {\c&H3DC5FF&}6 $RLS{\c&HFFFFFF&}\Nmoving directly between the two usernames.
+Dialogue: 0,0:02:38.46,0:02:42.04,Default,,0,0,0,,So, the transaction itself isn't invisible.
+Dialogue: 0,0:02:42.64,0:02:44.86,Default,,0,0,0,,The blockchain still records that it happened.
+Dialogue: 0,0:02:44.90,0:02:48.48,Default,,0,0,0,,Which block included it, and which {\c&H3DC5FF&}Relayer{\c&HFFFFFF&}\Nsubmitted it.
+Dialogue: 0,0:02:48.92,0:02:53.31,Default,,0,0,0,,But the payment information isn't presented\Nlike an ordinary public transfer between two
+Dialogue: 0,0:02:53.35,0:02:54.28,Default,,0,0,0,,wallet addresses.
+Dialogue: 0,0:02:54.94,0:02:56.62,Default,,0,0,0,,And that's what I wanted to examine.
+Dialogue: 0,0:02:57.28,0:03:01.27,Default,,0,0,0,,The receiver can confirm the payment, while\Nthe public transaction record shows a
+Dialogue: 0,0:03:01.31,0:03:04.00,Default,,0,0,0,,different picture of what happened behind the\Nscenes.

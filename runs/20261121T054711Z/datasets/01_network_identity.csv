@@ -1,0 +1,2 @@
+retrieved_at_utc,rpc_endpoint,chain_id,chain_id_hex,latest_block,latest_block_hash,latest_block_timestamp_utc,genesis_block_hash,genesis_block_timestamp_utc,status
+2026-11-21T05:47:11Z,https://testnet-rpc.rayls.com,7295799,0x6f5337,24800204,0x7c1ffb4e9dfb5eb64869e071c7a3f2ba0ffb01e894985c93ed9b3e0b90c3dee5,2026-11-21T05:47:14Z,0x33b818f13cab5c2e3e7bb589cbd0612e78e1139f3add29f0d5f0d6a03a5c9545,2026-03-12T16:22:30Z,PASS

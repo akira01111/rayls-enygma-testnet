@@ -1,0 +1,178 @@
+{
+  "block": 24825928,
+  "chain_id": 7295799,
+  "files": [
+    {
+      "bytes": 12828,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/transaction.json",
+      "retrieved_at_utc": "2026-11-21T16:15:18Z",
+      "sha256": "1ade629551b3d14a7d0bd048cc66ec91920221f3bf8ad2dd247d748728730be0",
+      "source": "scripts/tx_audit_09edab2b.py v1.1.0 \u2014 RPC eth_chainId + eth_blockNumber + eth_getTransactionByHash via curl"
+    },
+    {
+      "bytes": 17484,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/receipt.json",
+      "retrieved_at_utc": "2026-11-21T16:15:18Z",
+      "sha256": "2f08084e5c8fbc84daf2303c3c4b222171b3f6192a49693925d1a917fe855988",
+      "source": "scripts/tx_audit_09edab2b.py v1.1.0 \u2014 RPC eth_getTransactionReceipt via curl"
+    },
+    {
+      "bytes": 30095,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/logs.json",
+      "retrieved_at_utc": "2026-11-21T16:15:18Z",
+      "sha256": "e500fa8f347f571da0a3e0060c12c7c6e38da8927fb4b7da52fcda699c35ef51",
+      "source": "scripts/tx_audit_09edab2b.py v1.1.0 \u2014 receipt logs copy + RPC eth_getLogs single-block cross-check via curl"
+    },
+    {
+      "bytes": 5037,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/block.json",
+      "retrieved_at_utc": "2026-11-21T16:15:18Z",
+      "sha256": "958481ee13bece5f15dcbbaef4948dd13c8a23e311e30a06fab9b91515fa9492",
+      "source": "scripts/tx_audit_09edab2b.py v1.1.0 \u2014 RPC eth_getBlockByNumber via curl"
+    },
+    {
+      "bytes": 63532,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/contracts.json",
+      "retrieved_at_utc": "2026-11-21T16:15:18Z",
+      "sha256": "1ecc0fd47d9c0f89ddfa55b656630be9b67ba5c1aba1e110a07cc5381974d6db",
+      "source": "scripts/tx_audit_09edab2b.py v1.1.0 \u2014 RPC eth_getCode + eth_getStorageAt (EIP-1967 slot) via curl"
+    },
+    {
+      "bytes": 22622,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/explorer.json",
+      "retrieved_at_utc": "2026-11-21T16:20:14Z",
+      "sha256": "557b5f0ce7d6c814dab5cf39daa8f3021a1554ada7650e61633d17814b5b28ad",
+      "source": "Explorer API module=transaction action=gettxinfo + gettxreceiptstatus via curl (manual step)"
+    },
+    {
+      "bytes": 24321,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/explorer-relayer-txlist.json",
+      "retrieved_at_utc": "2026-11-21T16:25:46Z",
+      "sha256": "dcb8043e40aefae32299d14a0389b26813de2e2849271cdef0a68f83f95ca23a",
+      "source": "Explorer API module=account action=txlist (relayer, blocks 24825800-24826200) via curl (manual step)"
+    },
+    {
+      "bytes": 154400,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/registry-usernames.json",
+      "retrieved_at_utc": "2026-11-21T16:24:13Z",
+      "sha256": "66d515ebb152483f9b2a4f98ee73e1ec60463866141a7c7d5cb52f802508bf20",
+      "source": "Explorer API module=logs action=getLogs (UserRegistry UsernameSet, 200k-block pages) via curl (manual step)"
+    },
+    {
+      "bytes": 6456,
+      "relative_path": "experiments/transactions/tx-09edab2b/raw/related-tx-0xacc7d175.json",
+      "retrieved_at_utc": "2026-11-21T16:25:18Z",
+      "sha256": "48fe56b9189b4a9eb66a3e16c48afcda77ba8a19953ec5d5ea698d57ffffda86",
+      "source": "RPC eth_getTransactionByHash + eth_getTransactionReceipt + eth_getBlockByNumber via curl (manual step)"
+    },
+    {
+      "bytes": 31391,
+      "relative_path": "experiments/transactions/tx-09edab2b/decoded/decoded_events.json",
+      "sha256": "5a8ad453388f6cb12cc7335192128cbbb633cf475085901fe183a97026a58008",
+      "source": "scripts/decode_tx_09edab2b.py v1.0.0 \u2014 decode of raw files (no network)",
+      "written_at_utc": "2026-11-21T16:29:39Z"
+    },
+    {
+      "bytes": 12994,
+      "relative_path": "experiments/transactions/tx-09edab2b/decoded/audit_summary.json",
+      "sha256": "19c3a36e09d6b071f64b7700e359d08a08afa2444c289b2552b2a623e4cd5b33",
+      "source": "scripts/decode_tx_09edab2b.py v1.0.0 \u2014 answers to the 8 questions (no network)",
+      "written_at_utc": "2026-11-21T16:29:39Z"
+    },
+    {
+      "bytes": 4449,
+      "relative_path": "experiments/transactions/tx-09edab2b/decoded/bundle-abi-extract.json",
+      "sha256": "5df1cc6a69f7de72ed0dd1c5072e713f81a5f0993288771976d81f6736f4ff07",
+      "source": "python extraction from downloaded demo bundle assets/index-Dlv-HYaZ.js (bundle SHA-256 7530bbc2..., see file provenance)",
+      "written_at_utc": "2026-11-21T16:25:54Z"
+    },
+    {
+      "bytes": 1914,
+      "relative_path": "experiments/transactions/tx-09edab2b/decoded/lookups-4byte.json",
+      "retrieved_at_utc": "2026-11-21T16:25:54Z",
+      "sha256": "b0c7b0184f018227ff7237cbac8445623256015b0e1d5a7947a28b50661a36e4",
+      "source": "4byte.directory API via curl (manual step; all four queries count 0)"
+    },
+    {
+      "bytes": 16604,
+      "relative_path": "experiments/transactions/tx-09edab2b/TX-AUDIT-REPORT.md",
+      "sha256": "ac913a7c32958b5eff72e4e746ff1102338867ed007e31af374c7fccb84d7bd7",
+      "source": "authored report (human-readable findings)",
+      "written_at_utc": "2026-11-21T16:31:05Z"
+    },
+    {
+      "bytes": 5004,
+      "relative_path": "experiments/transactions/tx-09edab2b/gaps.md",
+      "sha256": "cc08501f09a3ff61e18c845db502c2958c1920b1590c45b2f5cce067e411460d",
+      "source": "authored report (remaining gaps)",
+      "written_at_utc": "2026-11-21T16:31:33Z"
+    },
+    {
+      "bytes": 3765,
+      "relative_path": "experiments/transactions/tx-09edab2b/TODO.md",
+      "sha256": "b537fbaa0b8fcf7ca68e532c5b0c8fabfa647f928dd48e389cd73fa73a93840b",
+      "source": "authored report (unfinished work)",
+      "written_at_utc": "2026-11-21T16:31:33Z"
+    },
+    {
+      "bytes": 17448,
+      "relative_path": "scripts/tx_audit_09edab2b.py",
+      "sha256": "6bee0b827faa24c07929993fa1fffbba4d46c9becca1c3eb1752327076e72e36",
+      "source": "fetch script v1.1.0 (Python stdlib + curl transport; v1.0.0 urllib transport failed on 3 calls \u2014 see report \u00a76)",
+      "written_at_utc": "2026-11-21T16:15:13Z"
+    },
+    {
+      "bytes": 37807,
+      "relative_path": "scripts/decode_tx_09edab2b.py",
+      "sha256": "e1dca19041676bede7aaaff8b05ef517fe5efc38ee9a0c90af9a7ae2fb6bfd72",
+      "source": "decode script v1.0.0 (Python stdlib, no network)",
+      "written_at_utc": "2026-11-21T16:29:34Z"
+    },
+    {
+      "bytes": 10734,
+      "relative_path": "scripts/verify_tx_audit_09edab2b.py",
+      "sha256": "e081c3c22cbcceaa5545013c475c056e7e50d9e6a27a924ea3b8946abd8f300b",
+      "source": "independent verification script v1.0.1 (Python stdlib, no network; does not import the fetch or decode scripts)",
+      "written_at_utc": "2026-11-22T01:57:51Z"
+    },
+    {
+      "bytes": 2650,
+      "relative_path": "experiments/transactions/tx-09edab2b/ADDENDUM-2026-11-22.md",
+      "sha256": "acbfbcd66adf7f3bd064fdb6d20e73a03e8f9d5d9c454d8b5e3fd32b144d6a84",
+      "source": "authored addendum (22 Nov 2026): @kittynim owner-confirmation + repository integration note; original evidence unchanged",
+      "written_at_utc": "2026-11-22T01:57:42Z"
+    }
+  ],
+  "generated_at_utc": "2026-11-21T16:32:13Z",
+  "generated_by": "manual python step (hashlib.sha256 over every listed file); method documented in TX-AUDIT-REPORT.md \u00a77",
+  "note": "manifest.json itself is NOT listed as an entry (a file cannot contain its own SHA-256). Its SHA-256 is recorded in the combined review PDF appendix (01_tx_audit_complete_history.pdf) and in the final handoff report. The review PDF is a derivative copy and is deliberately NOT part of this manifest.",
+  "package": "experiments/transactions/tx-09edab2b",
+  "scripts_used": {
+    "decode": "scripts/decode_tx_09edab2b.py v1.0.0",
+    "fetch": "scripts/tx_audit_09edab2b.py v1.1.0",
+    "verify": "scripts/verify_tx_audit_09edab2b.py v1.0.1"
+  },
+  "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb",
+  "updates": [
+    {
+      "change": "Addendum 22 Nov 2026: @kittynim mapping owner-confirmed; package integrated into repo docs; verify script v1.0.1 covers the addendum. No raw or decoded file changed; all 19 original manifest hashes unchanged.",
+      "date_utc": "2026-11-22",
+      "files_added": [
+        "experiments/transactions/tx-09edab2b/ADDENDUM-2026-11-22.md"
+      ],
+      "files_modified": [
+        "scripts/verify_tx_audit_09edab2b.py (v1.0.0 -> v1.0.1: EXPECTED_FILES + docstring only)"
+      ],
+      "verify_rerun": "re-run 2026-11-22T01:59:59Z: scripts/verify_tx_audit_09edab2b.py v1.0.1 \u2014 23/23 checks PASS, exit 0 (20 files verified incl. addendum)"
+    },
+    {
+      "change": "Stage-1 close-out 22 Nov 2026: TODO.md re-fetch checkbox checked; stale '(the check has not been run yet)' parenthetical replaced with the factual closed status (re-fetch run 11:02 WIB, comparator v2.1.1 CERTIFIED 12:33 WIB, stable 9/9 PASS). No raw, decoded, report, gaps, or script file changed; only the TODO.md entry updated.",
+      "date_utc": "2026-11-22",
+      "files_added": [],
+      "files_modified": [
+        "experiments/transactions/tx-09edab2b/TODO.md (3,344 B -> 3,765 B)"
+      ],
+      "verify_rerun": "re-run 2026-11-22T05:45:00Z: scripts/verify_tx_audit_09edab2b.py v1.0.1 \u2014 23/23 checks PASS, exit 0 (20 files verified incl. updated TODO.md)"
+    }
+  ]
+}

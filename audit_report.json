@@ -1,0 +1,57 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "csv_sha256": {
+      "tx_logs.csv": "7e709d4aa4eb3db0bb5a78f58a316cac7522f1820cc4915a16a80905528e32a0",
+      "registry_usernames.csv": "6c3c3ed53f55f08a6b1a6e44d7ecfba21bff5f743b68b89dc1edd00de67fcef9",
+      "statement.csv": "29729d4750e3fab7192d8fd0a683844f0c4d4d434cdb6ab81b81e49ece3f6b58",
+      "relayer_txs.csv": "5004978006c154574353e59abd27e4b3c8026624b5da3c120fb318c99e8afb46"
+    },
+    "manifest_tx": "20/20 OK",
+    "manifest_journey": "16/16 OK",
+    "verifier": "scripts/verify_tx_audit_09edab2b.py 23/23 PASS (run 22 Nov 2026)",
+    "cross_checks": {
+      "total": 13,
+      "boolean_checks_pass": 12,
+      "log_count_receipt": 7,
+      "all_match": true
+    }
+  },
+  "findings": {
+    "network": "Rayls Enygma Public Testnet",
+    "chain_id": 7295799,
+    "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb",
+    "block": 24825928,
+    "block_timestamp_utc": "2026-11-21T09:40:42Z",
+    "from": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+    "to": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+    "vault_implementation": "0xad9667049f14d1757d147f652c41dc241c57091c",
+    "vault_implementation_source": "unverified",
+    "logs_total": 7,
+    "logs_by_event": {
+      "Commitment": 3,
+      "EncryptedNote": 3,
+      "Nullifier": 1
+    },
+    "logs_event_names_note": "Event names are signature matches against the demo-bundle ABI (topic0 keccak); the deployed vault implementation has no verified source.",
+    "statement_8_integer_wei": 4416000000000000000,
+    "statement_8_classification": "verified-fact (integer); RLS unit = interpretation; 'total fee' = inference",
+    "chain_gas_wei": 63168048000000000,
+    "chain_gas_display": "0.063168048",
+    "chain_gas_token": "disputed (RLS vs USDr, r3 \u00a73.3)",
+    "gas_used": 1316001,
+    "gas_limit": 1630484,
+    "gas_price_wei": 48000000000,
+    "related_tx_hash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2",
+    "related_tx_block": 24825932,
+    "related_tx_amount_rls": "0.576",
+    "related_tx_role": "reconstruction (foundation fee counterpart); recipient identity unknown",
+    "registry_logs": 195,
+    "registry_resolutions": {
+      "anara": "0x0c5b369ad7d0c4e051a2887575f7fc85e0ccd0b5",
+      "kittynim": "0x680d90983da58bcb7d127e3421193274e84e0efc"
+    },
+    "audit_document": "ARTICLE-AUDIT-2026-11-22-r3.md + addendum F17"
+  },
+  "status_note": "PASS refers only to data integrity and internal consistency. It does not mean every interpretation is proven \u2014 see each finding's classification and r3 \u00a77 limitations."
+}

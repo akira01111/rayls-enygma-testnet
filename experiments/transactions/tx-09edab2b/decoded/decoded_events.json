@@ -1,0 +1,538 @@
+{
+  "block": 24825928,
+  "calldata": {
+    "ciphertextI": {
+      "count": 3,
+      "end_offset": 4288,
+      "entries": [
+        {
+          "byte_length": 1088,
+          "first_16_bytes": "0x73dc1edea2252aa4a11b338177784fe1",
+          "sha256": "1c04e808de1d3d00885b3c6abe57b7104466cd809c398a2f2e1599612e330a5f"
+        },
+        {
+          "byte_length": 1088,
+          "first_16_bytes": "0x019d6b07df2cb61ff29a59c7ed8bf94c",
+          "sha256": "afd87eb1a996da68f4d9c4eb8046c78bbab81587b7d0e0ca2c61dd73fa19332c"
+        },
+        {
+          "byte_length": 1088,
+          "first_16_bytes": "0xaaf1a001d1d4796053447749fc81c2ac",
+          "sha256": "7b7177ef5574089c0d72a4f3fa1a92238d456201653b54d2b556fe2885cef9b6"
+        }
+      ]
+    },
+    "ciphertextII": {
+      "count": 3,
+      "end_offset": 4800,
+      "entries": [
+        {
+          "byte_length": 92,
+          "first_16_bytes": "0x9fa65be7063c1be125d06b9238956efd",
+          "sha256": "e18a838c5fe91ae1c0ab31ccda580eae9f0f2e46b047793a164223969c893f65"
+        },
+        {
+          "byte_length": 92,
+          "first_16_bytes": "0xcf272f58ab836d0d86fa75431af6533c",
+          "sha256": "52da3846cbd96a97b57d351cf1d340bc74fdda8a451dc35175e98da172d03e1a"
+        },
+        {
+          "byte_length": 92,
+          "first_16_bytes": "0x20aa5b0d6e9b09493ac954be6da348d9",
+          "sha256": "a0d2d49080e2525ebb808d5f597c125b17943b8cb9961edeaa689a9f68a05434"
+        }
+      ]
+    },
+    "head_offsets": {
+      "ciphertextI": 800,
+      "ciphertextII": 4288,
+      "receipt": 96
+    },
+    "input_bytes": 4804,
+    "receipt_tuple": {
+      "numberOfInputs": 1,
+      "numberOfOutputs": 3,
+      "proof": {
+        "a": {
+          "x": "0x2c38439871802d06a92cbde32afeeb9917b5b4933453e75ca75d179a000abbb7",
+          "y": "0x1c2228a1104f19bd1ace3508d0eb2f0e43f00627b0d2ff7315e5c89c194af4db"
+        },
+        "b": {
+          "x": [
+            "0x0408bc89ca92b7e9118a5979df3bb3c3537b77205b7ae1cd16513d6979bc762d",
+            "0x0ad6b1ff2369ccb96a9428e98d2e3ddac5832610257dfcdfc7dba70d512bb01c"
+          ],
+          "y": [
+            "0x2dcc32080ef7631f84c3050c15e5653f0fcc9e580bc63440924e247af5a467b8",
+            "0x26b56d913a357583c044fb5cb84f26953f3be964a032f8706861ebc95cf7466c"
+          ]
+        },
+        "c": {
+          "x": "0x17262f6064e4f6c7673cc06e2931c6736b94efa312505b0f1d06cfb8b7120102",
+          "y": "0x0d3625414259b7186868a63199e7eb701fdc5840b82ff73b8c185276a2fb2901"
+        },
+        "note": "8 uint256 words = 256 bytes, matching the video VO claim of a 256-byte ZK proof (direct observation from the VO, not proven from the calldata alone)",
+        "proof_bytes": 256
+      },
+      "statement": {
+        "length": 10,
+        "values_hex": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0d6edc870e110a1209f596f42c5698eea9e8f463c91dc2911d3bd1f398940e05",
+          "0x0c0f23a6c0f28005cc0aa222482490f774d3cdae1d34d4baa77b7c737ccdfd7d",
+          "0x094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96",
+          "0x2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c",
+          "0x206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8",
+          "0x0000000000000000000000009c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+          "0x0000000000000000000000000000000000000000000000003d48c89a60200000",
+          "0x0f58ff4182eff0b700b2be4eb9560c67cdc359bc0a7c688489c4fb7db5f57592"
+        ],
+        "values_int": [
+          0,
+          0,
+          6075942233978560974817876474580508440370379496250920001406337333479246925317,
+          5454502945763875592701576071810508002020494068481157713198958958266091961725,
+          4203572301681572519174046107482780314928988640423590098121725576397071145878,
+          15839529834485623130174369121072127754401553698747807161464355374853279437644,
+          14669864028715638200222044110428971928201299967250355082911741678037893517256,
+          892628260469465868192251870087974236548138731202,
+          4416000000000000000,
+          6941936981953762233230311379582840826160420420689931747109419297423123379602
+        ]
+      }
+    },
+    "selector": "0xaacd552c",
+    "selector_keccak_check": {
+      "canonical_signature": "transferV2((((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)),uint256[],uint256,uint256),bytes[],bytes[])",
+      "keccak256_first_4_bytes": "0xaacd552c",
+      "matches_observed_selector": true,
+      "method": "keccak256 of the canonical signature from the demo-bundle ABI (decoded/bundle-abi-extract.json); 4byte.directory returned count 0 for this selector (see decoded/lookups-4byte.json)"
+    },
+    "selector_resolves_to": "transferV2",
+    "statement_interpretation": {
+      "statement_0": "0 - unidentified public input (zero)",
+      "statement_1": "0 - unidentified public input (zero)",
+      "statement_2": "0x0d6edc87... - unidentified 32-byte hash; position before the nullifier is consistent with a Merkle root, but no published statement layout confirms this (unknown)",
+      "statement_3": "nullifier 0x0c0f23a6... - VERIFIED: equals the Nullifier event topic3 in log 0",
+      "statement_4": "commitment 0x094b233a... - VERIFIED: equals the Commitment event topic2 in log 1 and the EncryptedNote topic2 in log 4",
+      "statement_5": "commitment 0x2304db2e... - VERIFIED: equals the Commitment event topic2 in log 2 and the EncryptedNote topic2 in log 5",
+      "statement_6": "commitment 0x206ed94a... - VERIFIED: equals the Commitment event topic2 in log 3 and the EncryptedNote topic2 in log 6",
+      "statement_7": "vault address 0x9c5ad5e5... - VERIFIED: equals the tx to-address (the proof is bound to this vault)",
+      "statement_8": "4,416,000,000,000,000,000 wei = 4.416 RLS - VERIFIED as a 32-byte word in the calldata; equals the wallet detail-activity fee 4.416 RLS exactly, and equals 3.84 + 0.576 (see Q8)",
+      "statement_9": "0x0f58ff41... - unidentified 32-byte hash; position after the fee is consistent with a binding/ciphertext hash, but no published statement layout confirms this (unknown)"
+    },
+    "total_words": 150,
+    "trailing_bytes_after_last_array": 0
+  },
+  "chain_id": 7295799,
+  "cross_checks": {
+    "block_tx_count_eq_1_and_hash_matches": true,
+    "ciphertext_calldata_eq_log_data": true,
+    "explorer_blockNumber_eq_rpc": true,
+    "explorer_from_eq_rpc": true,
+    "explorer_gasPrice_eq_rpc": true,
+    "explorer_gasUsed_eq_rpc": true,
+    "explorer_status_eq_rpc": true,
+    "log_count_receipt": 7,
+    "receipt_blockNumber_eq_block_json_number": true,
+    "receipt_logs_count_eq_logs_json_receipt_logs": true,
+    "receipt_logs_eq_block_level_logs": true,
+    "tx_hash_transaction_eq_receipt": true,
+    "vault_implementation_matches_audit": true
+  },
+  "fee": {
+    "comparison": "On-chain gas cost 0.063168048 RLS does NOT equal the wallet-displayed gas fee 3.84 RLS. BUT the total fee IS public on-chain: calldata statement[8] = 4,416,000,000,000,000,000 wei = 4.416 RLS exactly, matching the wallet detail-activity fee 4.416 RLS. The displayed split (3.84 gas + 0.58 foundation = 4.42 rounded) decomposes exactly as 4.416 = 3.84 + 0.576, where 0.576 RLS is the related-tx foundation transfer (see related_tx). So: total fee 4.416 verified on-chain (statement); foundation portion 0.576 verified on-chain (related tx, rounds to displayed 0.58); relayer-retained portion 3.84 determined arithmetically (4.416 - 0.576 = 3.84, matching the displayed gas figure) but NOT present as its own word in the data. The on-chain native gas (0.063 RLS) is a separate, much smaller cost paid by the relayer; the wallet \"gas\" label (3.84) is the relayer service fee, not the chain gas cost.",
+    "decimals_assumption": "RLS shown as 18 decimals (token contract per audit C.2/C.3 is 18-decimal reading; the wei figure is exact regardless of decimals)",
+    "effectiveGasPrice_wei": 48000000000,
+    "gasLimit": 1630484,
+    "gasPrice_wei": 48000000000,
+    "gasUsed": 1316001,
+    "maxFeePerGas_wei": 57600000000,
+    "max_possible_gas_cost_RLS_18dec": "0.078263232",
+    "onchain_gas_cost_RLS_18dec": "0.063168048",
+    "onchain_gas_cost_wei": 63168048000000000,
+    "wallet_display": {
+      "detail_activity_RLS": "4.416",
+      "foundation_RLS": "0.58",
+      "gas_RLS": "3.84",
+      "total_displayed_RLS": "4.42"
+    }
+  },
+  "hidden_vs_visible": [
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "receiver EVM @kittynim",
+      "needles": [
+        "0x680d90983da58bcb7d127e3421193274e84e0efc",
+        "000000000000000000000000680d90983da58bcb7d127e3421193274e84e0efc"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "sender EVM @anara",
+      "needles": [
+        "0x0c5b369ad7d0c4e051a2887575f7fc85e0ccd0b5",
+        "0000000000000000000000000c5b369ad7d0c4e051a2887575f7fc85e0ccd0b5"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "RLS token proxy",
+      "needles": [
+        "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+        "00000000000000000000000007e17e17e17e17e17e17e17e17e17e17e17e17ea"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "receipt_json"
+      ],
+      "label": "relayer",
+      "needles": [
+        "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+        "000000000000000000000000a5f0c684eb49866a9f62f901cd85f98a19da0ac8"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "amount 6 RLS as 6e18 word",
+      "needles": [
+        "00000000000000000000000000000000000000000000000053444835ec580000"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "fee 3.84 RLS as 3.84e18 word",
+      "needles": [
+        "000000000000000000000000000000000000000000000000354a6ba7a1800000"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "fee 0.58 RLS as 0.58e18 word",
+      "needles": [
+        "000000000000000000000000000000000000000000000000080c92ed51ba0000"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "fee 4.42 RLS as 4.42e18 word",
+      "needles": [
+        "0000000000000000000000000000000000000000000000003d56fe94f33a0000"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input"
+      ],
+      "label": "fee 4.416 RLS as 4.416e18 word",
+      "needles": [
+        "0000000000000000000000000000000000000000000000003d48c89a60200000"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "fee 0.576 RLS as 0.576e18 word",
+      "needles": [
+        "00000000000000000000000000000000000000000000000007fe5cf2bea00000"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input",
+        "receipt_json"
+      ],
+      "label": "SharedVaultProxy",
+      "needles": [
+        "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+        "0000000000000000000000009c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2"
+      ]
+    },
+    {
+      "found_anywhere": false,
+      "found_in": [],
+      "label": "UserRegistry proxy",
+      "needles": [
+        "0xa473291ffb33e2276f364fae169f03c4406719e9",
+        "000000000000000000000000a473291ffb33e2276f364fae169f03c4406719e9"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input",
+        "receipt_logs_topics_plus_data",
+        "receipt_json"
+      ],
+      "label": "log hash 0x0c0f23a6c0f2... in calldata",
+      "needles": [
+        "0c0f23a6c0f28005cc0aa222482490f774d3cdae1d34d4baa77b7c737ccdfd7d"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input",
+        "receipt_logs_topics_plus_data",
+        "receipt_json"
+      ],
+      "label": "log hash 0x094b233a5cd1... in calldata",
+      "needles": [
+        "094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input",
+        "receipt_logs_topics_plus_data",
+        "receipt_json"
+      ],
+      "label": "log hash 0x2304db2edc57... in calldata",
+      "needles": [
+        "2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c"
+      ]
+    },
+    {
+      "found_anywhere": true,
+      "found_in": [
+        "input",
+        "receipt_logs_topics_plus_data",
+        "receipt_json"
+      ],
+      "label": "log hash 0x206ed94ad9c1... in calldata",
+      "needles": [
+        "206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8"
+      ]
+    }
+  ],
+  "log_summary": {
+    "all_logs_from_vault_proxy": true,
+    "by_event": {
+      "Commitment": 3,
+      "EncryptedNote": 3,
+      "Nullifier": 1
+    },
+    "erc20_transfer_logs_in_target_tx": 0,
+    "paidOut_or_partialWithdrawal_logs": 0,
+    "total": 7
+  },
+  "logs": [
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 0,
+      "data_hex": "0x",
+      "decoded_fields": {
+        "nullifier": "0x0c0f23a6c0f28005cc0aa222482490f774d3cdae1d34d4baa77b7c737ccdfd7d",
+        "treeNumber": 0,
+        "vaultId": 2
+      },
+      "event_name": "Nullifier",
+      "event_signature": "Nullifier(uint256,uint256,uint256)",
+      "is_erc20_transfer": false,
+      "logIndex": 0,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x437885c05eacc89ce854c46fbeb8290d4c624ea6b561c7a784d86bb5369b2ea3",
+      "topics": [
+        "0x437885c05eacc89ce854c46fbeb8290d4c624ea6b561c7a784d86bb5369b2ea3",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x0c0f23a6c0f28005cc0aa222482490f774d3cdae1d34d4baa77b7c737ccdfd7d"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 0,
+      "data_hex": "0x",
+      "decoded_fields": {
+        "commitment": "0x094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96",
+        "vaultId": 2
+      },
+      "event_name": "Commitment",
+      "event_signature": "Commitment(uint256,uint256)",
+      "is_erc20_transfer": false,
+      "logIndex": 1,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+      "topics": [
+        "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 0,
+      "data_hex": "0x",
+      "decoded_fields": {
+        "commitment": "0x2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c",
+        "vaultId": 2
+      },
+      "event_name": "Commitment",
+      "event_signature": "Commitment(uint256,uint256)",
+      "is_erc20_transfer": false,
+      "logIndex": 2,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+      "topics": [
+        "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 0,
+      "data_hex": "0x",
+      "decoded_fields": {
+        "commitment": "0x206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8",
+        "vaultId": 2
+      },
+      "event_name": "Commitment",
+      "event_signature": "Commitment(uint256,uint256)",
+      "is_erc20_transfer": false,
+      "logIndex": 3,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+      "topics": [
+        "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 1312,
+      "data_hex": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000004a0000000000000000000000000000000000000000000000000000000000000044073dc1edea2252aa4a11b338177784fe16d14ee462d4715f6c7b1f7c41eecc58dfe21747488ee591dcb5adeb0b0873593fab99ad4cc5c1ed5fdf86c43f802cfdd52e41edd624ab0900934dcacfb4f31545250f0ffd1a284d46064bb78d9321594702f4bfbd61c93587a88919542ce7ef6471673edb4dfc93e99ca758da54610bc06be9b02f5a4caeee753cc06fdcdae09d2c70c61aa6ccd5a95a39b14cc1bafed31be7dc662e444d4341f940ea8c36334d403fa2132e7c394bc3bf7e3f213928819cfdc05a7feed5d0a5f9632841ea5d4b13e62db4db1ef658a3b65b0cd551a3065735d1859f7c4c92fca77443595fa7df4917c18f2557d40c84581cc1c9b9e4c2242297c59261c76fa1dcccf228cffe9e45badb824ed7cfdd0195b8f5f7fb3e13aa34e04da26a90dc6555f45e0dd25795b234496bc4b68e763847ad26303fcb844fc9b24306410c1245ce5dafe6dc52da7ba0b38462c0cf46028241680f4534f93e7424eded678a52638e9ccee74c4cd656eb7232a5722cecb68d53a23dfc54eb67f2bda387675b12be7da1baf6739a51b9864c56c7e1287beb7a47c7bb7e21cc1ca036d646077e62207211cef90195916bbd76504adc7f6ad3f0725769757a1fd1d1fcbcd9b32135093b6f79ea1dc8f0798cc8c3de7e5d8b194acb00b9753966e9b60aed421831c13ce4dfa30961c127fe57fd5f3b6914d493383ff27ba786dded617c9e3972cdf665d1490b972a8e790dbd81f85bbe6ccd1de6a1d9a7b903b1f8eabc0a8a0466c1d331cd97590a1e836182efec2402722c6499f9a52e4948bcd243198e138492239e4fbf619525008f308185be066b2fca8ca27c089199a12178d069bb078a78618c0967d0a4c492d458709418b5c141644f2cc7ecd4a7ef0a9e4037ff40247dc644a5b1b2de02ada19009c66300b450b75bd352154e3ff1a711eba01a6d3a8086b156574d3650aebdb015f1f324a31a976c5d152c7901d2fb733e1a91b56ab84248d4e0e6c7caadadb5e7d02ad7f429c686fa2656c768bfe5bda9aefb25595e6ffef98b102deb4a59e1f773614c39b66d2bd371c6c35642102d5c75a243a9fadbc47d3707dfc60f54e59d57815a0c377677a47736344b70b6a99b1b639adabc7fa5719e3bfdfedfa739e6ea862a2f830afdd78ae498955a868112f7a68a8e3433e356074ec222e3e35b5c354ee1037fef3c8730e4ad512302295df1880388c5931698671c0c9d6b29bc29d66bad49a6104fa653ac6745f1d73fffdc9259b2b3afda433227ac6b8e5aa840d862fade635f628c2d92c5f73c73c7d8a4158d6649dd22a1866f231e5362d925f8d1907ed58de639a631de8c350a9e1948c3a2d756dc19e000b17bd544df185cd8526e980ca4f6cc495ef87ff7f909dbf63d9f5f89ba19c300c3751d01005ad34f65e9a89ba706766cdc45066e28b533fc07f1d3e8c1dd4fead892b0f22dff7c10fb7e4cdf1822c1cb7e288183811d9c52109690e17492bd917347f4045d62510c57bbf97fc3954ac29989285b5000000000000000000000000000000000000000000000000000000000000005c9fa65be7063c1be125d06b9238956efd8e982ae0884a75b856cd2c9f8a9d9deff362582a7477a68b0ad94c129542cb2546be345cafdcbaccd4d10c37da798c6dadeb922f5347077d073a52c98e0ee9b24d3130e911fce82817dcff8f00000000",
+      "decoded_fields": {
+        "ciphertextII_byte_length": 92,
+        "ciphertextII_sha256": "e18a838c5fe91ae1c0ab31ccda580eae9f0f2e46b047793a164223969c893f65",
+        "ciphertextI_byte_length": 1088,
+        "ciphertextI_sha256": "1c04e808de1d3d00885b3c6abe57b7104466cd809c398a2f2e1599612e330a5f",
+        "commitment": "0x094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96",
+        "note": "ciphertext contents are opaque; only lengths and hashes are recorded here",
+        "vaultId": 2
+      },
+      "event_name": "EncryptedNote",
+      "event_signature": "EncryptedNote(uint256,uint256,bytes,bytes)",
+      "is_erc20_transfer": false,
+      "logIndex": 4,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+      "topics": [
+        "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x094b233a5cd11b001b5fe7730b1916da40db0cdf179672c07c069c114a595b96"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 1312,
+      "data_hex": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000004a00000000000000000000000000000000000000000000000000000000000000440019d6b07df2cb61ff29a59c7ed8bf94cf4197feb33d09600fe91bd865e5e2bd0f5fac1752434f2b14684f1f2d9f1c8ce24909e145cd07acd5b24440732f55ec9c21b076c4b24229b03217c6f3d90c51b73e7ec756b213be46c53fa9f7e72eb2b073b6e52e3463a7e6dfcb7a4d1d8a6d59b5d357cbbecc16f2910499976f43c11146016e1250cfe1611eb77618dd219472cdef154764e7807c9d3e42bb658b38b1bffc2bd519a591e18038b0b78638b6722d3e9d9c55a1deddae3b3457c30acde10cb9b6ff6e76eca1887052e9f3ac17ba63d1b1b9955a9277eb061e5f36fed5f9728f83f6ef69d22a8ae5970e66181df00dcfaf13dc3f4a5f0dbcb94623368290dc27aeb01536aa6d13fba49bfa579c5933d9949b216d44c93a0173ce4fbea2efec5edc852b2b96909ebc1346505511ff47a9ac4baa3c7f8bf55fb8568a44ce1b9389f8440343daae5f0fa5714970851f9ef504e7e8423036baec2962996250b6f76457902ad602a27beb939edb1a38876da76b175f4c599093a7761e3ab4f56d48b7b045783a1c00f36abfb139ea26aa07df9bbb440e53133ebe704a54927585bdc063f0a3d22f269593bb03a60f3a76b3b243551c1270d175cd0e54c7ea192cf27cba681862ef584c2e7d2b967bebdbc0c321b5c2ac0e9ca1867b1a8e7fb45c39bf120485726f7bcfa12e7c772db87fade90014850083fb53b2395c3b01e73f5b7aed43982d9518abf51b9c0588c3a85af0af2b9f3687b7be57a69d9b1eb5e0aa8896537943039ae5c2bfbb7d4f689584cdaeed9754e4738aa393792eddd4378a4c1ca9b064af78dd5181f93b14422c92f16362ecf1d8e2f4d0eb4c6e2aeacf9d3f08f2d4441b3e0598cba9f461214a5745b00551d05d2d56e13b84ea05619f791b090a7d8f41a88471e11b9e00b817e1e3ff55b63b965cda67cc45e5084ec0561325738c1a7b2cfb78f83fb4225e1026545886167d6086af54ab4020cd78e59af3fc3b4b9c65ed4809e2af612acf65324e46ec8f17cd0bd161d4ceb500e5103ffe0693f9819aa0a38d6ccdc243da6b8e82bcfe22ddc2d120b5de5231eb29072f9477d5f47847a0991f9a40b5d6e41658d90fec89b85e0ae423d5c880cc59788c80efcc24be600163dc411019ffcf3491979598a1b87c3ef39b7314a1b0c946aff6e97e378113e691574ee3e5cc94ef5a3875871c9ffae68012e958d2080e2448811dd5d5a75cba8f8ba01f0acf28ff597e330b1b3840090b98af56d16d60063ef516dca2e74283d533d2c13c0f590fe1d2e08ee34da0d120309052c398eafeda19acc11d694d3e0d6f63449b8bd6d055552ec477242333c4c665d07b733d29d6286afccabf5d0e5cd1c04ed6edb39e8ba9258477da751dcaf7ecd31c6f8658e70fbe110ed900a168ecc33f99367f0ae962de847a78e6266e5cebbec580c8aea294fcb6f9e760c3b21c3fcbf24b6715fb841f3f6d6e8824b409906f393f5ce89f7b5b6f9500c6552c34b668e66961a1719dce315bd2aca982276b0ba41d13c000000000000000000000000000000000000000000000000000000000000005ccf272f58ab836d0d86fa75431af6533c08f142db6e22e98bfab9cceff0d9695260c81c4ea7303e749fe07c6cd1adda2cc63e63c6d745aa8bd8cfaba6608dcd97e5ce447fc43532eefd964870c6df422c63d6be61af3994023c40a2cd00000000",
+      "decoded_fields": {
+        "ciphertextII_byte_length": 92,
+        "ciphertextII_sha256": "52da3846cbd96a97b57d351cf1d340bc74fdda8a451dc35175e98da172d03e1a",
+        "ciphertextI_byte_length": 1088,
+        "ciphertextI_sha256": "afd87eb1a996da68f4d9c4eb8046c78bbab81587b7d0e0ca2c61dd73fa19332c",
+        "commitment": "0x2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c",
+        "note": "ciphertext contents are opaque; only lengths and hashes are recorded here",
+        "vaultId": 2
+      },
+      "event_name": "EncryptedNote",
+      "event_signature": "EncryptedNote(uint256,uint256,bytes,bytes)",
+      "is_erc20_transfer": false,
+      "logIndex": 5,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+      "topics": [
+        "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x2304db2edc577b64cfdde0998c0effa59e9f285c3c8a8065143f8fc83ab3d34c"
+      ]
+    },
+    {
+      "address": "0x9c5ad5e5ea5b5910e7fd1e1cc7b70ce0e4bf06c2",
+      "data_byte_length": 1312,
+      "data_hex": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000004a00000000000000000000000000000000000000000000000000000000000000440aaf1a001d1d4796053447749fc81c2ac52b04aa3b19ca9fe02206584b41ab2235bfac6317a30fbd34b116766a862cb827deabb13e30c3772830fa3e148d81f3f4ea2463378e47e82a93825265719a92cdf7272bfd2d00d9e8c65dd95da10933adbe7229082ef2884b990e41f7b6cc38d421a3ad40327c27312e42962f9e85fe4fb7e8745815c375a2038edf87f76e03c06170f3afdaf32794991450085078c86fc42988a7fca54b12f1c09c615ae04984510be9c7b05af8a4e90115a97100391f3eb886e080e559e40f15b74ac05f9ceefe3df3660ad0db1ce8869b903eceaa75097cdb207bf210a25bc497e0dba96d8e47d7174005bf10b990600fceed6776679ef16635350b60d982a8dab0f93679c75691bc9ed72746282d9c0ff4d42f69cc3a6ab89a294683fbf19945ad979fcf2b18600fc754a4a7619d77e09f505e5349a222e431244461750fac4e1835fc68f89750f9bde014eecdd69a175621719b402c4ac1891d1598405903d38d7b3481e2ab0ae0e8ccca8cf5a98628299fca8a3b303e35c3121511d4c6886b85a7c6c5c99fe1a93acac19b36179f9de2b2805cd4818cafb16297f8c7f0f7655f34a421b027334db623d6a42ee008bb8d2d53c8e838843e7052d543626c091b24a7c721e9526bc04dbe6d1386e29d73ede096bfe8bbb1616ea0d7e6f9613dc9142f3c1e4b0aac2b7d66b3c61cf09939355c75d8fdfa089eecf3675fb0191f7dcfbfaa6e5d68e1bc544971d8d5ef0aad7483ed2072b817195531a99907f675b4aca3cb8ac9bdc18d1064ca67e5078e0a15bc067a2bd2c2dce34c695f77bfacaff77142ada0123e1ced14a55c6e7358c6b8db509eab1264eeb952bb31d4412642c97a73bc200d6cbc29a1cb33221d46b0335d2c1391dcf09659a4247f26553986833a2717b2acf6f021b87824b375e3f22c243e9d5a23ec83181f3321f8af8fd74141821f8f00435d515079817570291523bca03f4314f211ef3738c06ffbf68466d6baab9525ac52892f86cb7e14e0b04834b4fe120406addb3e14e7d602af1487ba48e9e0dcd4867d7af9d34a58e489c63e785fd541f38732323ef80a8b81dc47009fb5a60a360653d88d67f6d656f8fb6e4f2dc2c93c91e50b90db90e762efae7ed33afe96f86a2ca661111ec237bc6bd69ad8086f1181a50bfaa074cf3a79dd60c814f60c53f11af137e78f2b6826b3545c3a7e5b7dd605b293db388288425bc88032feb85540897ca2419ca80db5967a601e0a3095c40dc3ac07543db52681a53aa6c02e46da401baf8380aaf94a6011182efc7cac318fb815713086345adf86ef53792c0ce38f983609a349a8bd3d21717eea0db5bf472118820a62e5593df60fc77529b94d0548272a9030351c2af3e84c4697d9f3943bc3d0e59923524f794dd07cf2b6471bb5277d3c1e3edf7ffed183bc2a3d064008f977b3fd3e1e99ae95016e12ab6f4f678a3b531fbc35c49b5312d21a55e9e1f444f1f6edac7b85a9d123d2d0f4d3d0e48035e06fa632b0f9537b2000000000000000000000000000000000000000000000000000000000000005c20aa5b0d6e9b09493ac954be6da348d99a60cc2e4a33e88452ec8cf07faeef9881f697449ce5eeb7540ee1a35870f99cfeb44b25bcde15cfb19b089b87bad592dfcdaa5ee40767b4944687947407a465464133292e626a01d36c80ac00000000",
+      "decoded_fields": {
+        "ciphertextII_byte_length": 92,
+        "ciphertextII_sha256": "a0d2d49080e2525ebb808d5f597c125b17943b8cb9961edeaa689a9f68a05434",
+        "ciphertextI_byte_length": 1088,
+        "ciphertextI_sha256": "7b7177ef5574089c0d72a4f3fa1a92238d456201653b54d2b556fe2885cef9b6",
+        "commitment": "0x206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8",
+        "note": "ciphertext contents are opaque; only lengths and hashes are recorded here",
+        "vaultId": 2
+      },
+      "event_name": "EncryptedNote",
+      "event_signature": "EncryptedNote(uint256,uint256,bytes,bytes)",
+      "is_erc20_transfer": false,
+      "logIndex": 6,
+      "resolution": "keccak256 of bundle-ABI signature equals observed topic0 (verified-fact)",
+      "topic0": "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+      "topics": [
+        "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+        "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "0x206ed94ad9c10d7f0743d5573d394105c9e99a5b7584ed40dad4f80781760fc8"
+      ]
+    }
+  ],
+  "provenance": {
+    "block": 24825928,
+    "bundle_abi_extract_sha256": "5df1cc6a69f7de72ed0dd1c5072e713f81a5f0993288771976d81f6736f4ff07",
+    "chain_id": 7295799,
+    "note": "SHA-256 values here are computed at decode time from the read-only raw files; the manifest is the authoritative checksum record.",
+    "retrieved_at_utc": "2026-11-21T16:15:18Z",
+    "script": "scripts/decode_tx_09edab2b.py",
+    "script_version": "1.0.0",
+    "source_files_sha256": {
+      "block.json": "958481ee13bece5f15dcbbaef4948dd13c8a23e311e30a06fab9b91515fa9492",
+      "contracts.json": "1ecc0fd47d9c0f89ddfa55b656630be9b67ba5c1aba1e110a07cc5381974d6db",
+      "explorer-relayer-txlist.json": "dcb8043e40aefae32299d14a0389b26813de2e2849271cdef0a68f83f95ca23a",
+      "explorer.json": "557b5f0ce7d6c814dab5cf39daa8f3021a1554ada7650e61633d17814b5b28ad",
+      "logs.json": "e500fa8f347f571da0a3e0060c12c7c6e38da8927fb4b7da52fcda699c35ef51",
+      "receipt.json": "2f08084e5c8fbc84daf2303c3c4b222171b3f6192a49693925d1a917fe855988",
+      "registry-usernames.json": "66d515ebb152483f9b2a4f98ee73e1ec60463866141a7c7d5cb52f802508bf20",
+      "related-tx-0xacc7d175.json": "48fe56b9189b4a9eb66a3e16c48afcda77ba8a19953ec5d5ea698d57ffffda86",
+      "transaction.json": "1ade629551b3d14a7d0bd048cc66ec91920221f3bf8ad2dd247d748728730be0"
+    },
+    "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+  },
+  "receiver_evm_resolved": "0x680d90983da58bcb7d127e3421193274e84e0efc",
+  "related_tx": {
+    "amount_RLS_18dec": "0.576",
+    "amount_wei": 576000000000000000,
+    "block": 24825932,
+    "finding": "0.576 RLS transferred by the relayer to 0x71af09966cbed4434cca97c40fa38b8083548b95 four blocks after the target tx; 0.576 rounds to 0.58 at two decimals, matching the wallet-displayed foundation fee. This is the on-chain counterpart of the displayed 0.58 RLS fee (reconstruction: same actor, same time window, amount matches within display rounding).",
+    "from": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+    "function": "transfer(address,uint256) (selector 0xa9059cbb, canonical ERC20 transfer)",
+    "gasUsed": 41806,
+    "recipient": "0x71af09966cbed4434cca97c40fa38b8083548b95",
+    "recipient_identity": "0x71af09966cbed4434cca97c40fa38b8083548b95 is recorded in the audit contract map (C.2) as the Auditor EOA. The wallet labels the 0.58 fee \"Rayls Foundation fee\". Whether the Auditor EOA is the foundation fee address is UNKNOWN: no source in the archive links the two roles to one address.",
+    "status": "0x1",
+    "to": "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+    "transfer_log": {
+      "address": "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+      "from_topic": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+      "is_erc20_transfer": true,
+      "to_topic": "0x71af09966cbed4434cca97c40fa38b8083548b95",
+      "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+      "value_RLS_18dec": "0.576",
+      "value_wei": 576000000000000000
+    },
+    "tx_hash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2"
+  },
+  "sender_evm_resolved": "0x0c5b369ad7d0c4e051a2887575f7fc85e0ccd0b5",
+  "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+}

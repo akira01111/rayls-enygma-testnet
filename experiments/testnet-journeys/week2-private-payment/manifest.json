@@ -1,0 +1,126 @@
+{
+  "files": [
+    {
+      "bytes": 8523526,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final.mp4",
+      "role": "final video 720p (canonical output) \u2014 LOCAL-ONLY, excluded from the public repository (22 Nov 2026): still shows truncated Enygma Spend/View key fragments. Sanitized public version committed instead (see enygma-week2-private-payment-final-720p-public.mp4). Hash kept here for provenance.",
+      "sha256": "49a1bc13d2b18a01f5a52ba0ffa5707d791fc0ddb2a6b30afdbb34c1206b0c3a",
+      "source_path": "~/workspace/enygma-week2-video/enygma-week2-private-payment-final.mp4",
+      "local_only": true
+    },
+    {
+      "bytes": 20622942,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final-1080p.mp4",
+      "role": "final video 1080p upscale (lanczos from 720p) \u2014 LOCAL-ONLY, excluded from the public repository (22 Nov 2026): still shows truncated Enygma Spend/View key fragments. Sanitized public version committed instead (see enygma-week2-private-payment-final-1080p-public.mp4). Hash kept here for provenance.",
+      "sha256": "b1834d729c1a209d8eda885555afbcb6ce9e2beb58f6350e24ddb1c5a8b08d3e",
+      "source_path": "~/workspace/enygma-week2-video/enygma-week2-private-payment-final-1080p.mp4",
+      "local_only": true
+    },
+    {
+      "bytes": 6307,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/subs.ass",
+      "role": "subtitles, 44 cues",
+      "sha256": "f9aa42faac8cbc83fab8a9f7d143b33fe599f631287b88e312094ecc07952e32",
+      "source_path": "~/workspace/enygma-week2-video/subs.ass"
+    },
+    {
+      "bytes": 7687,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/build_subs.py",
+      "role": "subtitle generator (source of truth)",
+      "sha256": "6a39b6b661aba78728b005d0fd9e9d1f2976bf53076afb2b6e52235bee71fcee",
+      "source_path": "~/workspace/enygma-week2-video/build_subs.py"
+    },
+    {
+      "bytes": 2598,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/build_video_v2.py",
+      "role": "video-only track builder",
+      "sha256": "3d6e4f737230f6131bf8fe46a4753b083bdf9f547ab17c990e9f57403fd440bf",
+      "source_path": "~/workspace/enygma-week2-video/build_video_v2.py"
+    },
+    {
+      "bytes": 4909,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/EDIT-PLAN.md",
+      "role": "edit plan",
+      "sha256": "cc0b860388abf5b5c1472b8fb769c63a98940157e3eda1eb834a697c986f1eba",
+      "source_path": "~/workspace/enygma-week2-video/EDIT-PLAN.md"
+    },
+    {
+      "bytes": 5854,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/QA-REPORT-V2.md",
+      "role": "QA report v2 rebuild",
+      "sha256": "c4f466dc1a8c6625a8fdcf726d2299e2b438410df1be19857f1014a4667bbbfc",
+      "source_path": "~/workspace/enygma-week2-video/QA-REPORT-V2.md"
+    },
+    {
+      "bytes": 24777960,
+      "local_only": true,
+      "relative_path": "raw-data/videos/week2-source-footage-610a5cd30d3cdc457ea836e69c74229a6fb42d3530f4227a2269a00f4af311fa.mp4",
+      "role": "source footage (input) \u2014 LOCAL-ONLY, excluded from the public repository (see .gitignore); hash kept here for provenance",
+      "sha256": "610a5cd30d3cdc457ea836e69c74229a6fb42d3530f4227a2269a00f4af311fa",
+      "source_path": "~/workspace/user/media_library/video/61/610a5cd30d3cdc457ea836e69c74229a6fb42d3530f4227a2269a00f4af311fa.mp4"
+    },
+    {
+      "bytes": 2953936,
+      "local_only": true,
+      "relative_path": "raw-data/videos/ElevenLabs_2026-11-21T13_44_30_Zara_-_The_Warm__Real-World_Conversationalist_pvc_s50_sim75_v4.mp3",
+      "role": "voice-over (input, used as-is) \u2014 LOCAL-ONLY, excluded from the public repository (see .gitignore); hash kept here for provenance",
+      "sha256": "ebb2fdda3d84ea99fece015ca075cd7b74f3f96a6630c13182b5eb6f2b5c6a7c",
+      "source_path": "~/workspace/user/files/ElevenLabs_2026-11-21T13_44_30_Zara_-_The_Warm__Real-World_Conversationalist_pvc_s50_sim75_v4.mp3"
+    },
+    {
+      "bytes": 86116,
+      "relative_path": "raw-data/screenshots/chk-21.jpg",
+      "role": "spelling-check frame, final 1080p t=21s \u2014 LOCAL-ONLY, excluded from the public repository (22 Nov 2026): still shows truncated Enygma Spend/View key fragments. Sanitized public version committed instead (see chk-21-public.jpg). Hash kept here for provenance.",
+      "sha256": "9cb7c0ea6ee3ba8f02053c917daee5e08da13a5a9bb147bb8ddbd0c9ebb6a173",
+      "source_path": "~/workspace/enygma-week2-video/myqa/chk-21.jpg",
+      "local_only": true
+    },
+    {
+      "bytes": 92135,
+      "relative_path": "raw-data/screenshots/chk-22.jpg",
+      "role": "spelling-check frame, final 1080p t=22s \u2014 LOCAL-ONLY, excluded from the public repository (22 Nov 2026): still shows truncated Enygma Spend/View key fragments. Sanitized public version committed instead (see chk-22-public.jpg). Hash kept here for provenance.",
+      "sha256": "b714aca78f8cc3cab036d84c9632f518b6bb63ea6169bbdaa4b1bb8a3b182267",
+      "source_path": "~/workspace/enygma-week2-video/myqa/chk-22.jpg",
+      "local_only": true
+    },
+    {
+      "bytes": 86426,
+      "relative_path": "raw-data/screenshots/chk-23.jpg",
+      "role": "spelling-check frame, final 1080p t=23s",
+      "sha256": "42cce0f3f4c79d1755c8ce8a72ffc89d90716d0e09bb071fa75a9674668e53d2",
+      "source_path": "~/workspace/enygma-week2-video/myqa/chk-23.jpg"
+    },
+    {
+      "bytes": 10041261,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final-720p-public.mp4",
+      "role": "final video 720p, PUBLIC sanitized version (22 Nov 2026): truncated Enygma Spend/View key fragments blurred (full-width band y 57-173) at t 20-24, 82-88, 109-115, 138-144, 176-185.533 s; otherwise byte-identical content to the original (re-encoded libx264 CRF 18, audio copied)",
+      "sha256": "b5c91ee18925a474734e358bbfcc934e79640c46bf8921a7249fd50e51ef81b0",
+      "source_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final.mp4 (repo original; sanitized by ffmpeg blur, 22 Nov 2026)"
+    },
+    {
+      "bytes": 20153708,
+      "relative_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final-1080p-public.mp4",
+      "role": "final video 1080p, PUBLIC sanitized version (22 Nov 2026): truncated Enygma Spend/View key fragments blurred (full-width band y 85-260) at t 20-24, 82-88, 109-115, 138-144, 176-185.533 s; otherwise byte-identical content to the original (re-encoded libx264 CRF 18, audio copied)",
+      "sha256": "e1e7a339c93c1aa5d565958a5f34372a731b10dd9381f2d4e318f1867780e64f",
+      "source_path": "experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final-1080p.mp4 (repo original; sanitized by ffmpeg blur, 22 Nov 2026)"
+    },
+    {
+      "bytes": 121762,
+      "relative_path": "raw-data/screenshots/chk-21-public.jpg",
+      "role": "spelling-check frame, final 1080p t=21s \u2014 PUBLIC sanitized version (22 Nov 2026): Enygma Spend/View key line blurred (GaussianBlur r=25, box x 585-1315, y 180-252)",
+      "sha256": "f62fd01263dded1be02abe1932211b4d68de7242eb71e06a2280b3e44f04af33",
+      "source_path": "raw-data/screenshots/chk-21.jpg (repo original; sanitized by PIL GaussianBlur, 22 Nov 2026)"
+    },
+    {
+      "bytes": 127132,
+      "relative_path": "raw-data/screenshots/chk-22-public.jpg",
+      "role": "spelling-check frame, final 1080p t=22s \u2014 PUBLIC sanitized version (22 Nov 2026): Enygma Spend/View key line blurred (GaussianBlur r=25, box x 585-1315, y 90-162)",
+      "sha256": "9158ffa9fab757b78b7f4c895da9bd7f0cab6b2e697acd50dbd6a8cc25a1d43d",
+      "source_path": "raw-data/screenshots/chk-22.jpg (repo original; sanitized by PIL GaussianBlur, 22 Nov 2026)"
+    }
+  ],
+  "generated_at_utc": "2026-11-22T07:28:36Z",
+  "journey": "experiments/testnet-journeys/week2-private-payment",
+  "note": "All files copied with cp (originals untouched). Evidence media (mp4/mp3/ass/jpg) are chmod 444 in the repo. The manifest itself is not listed (self-reference impossible). Four inputs are LOCAL-ONLY and excluded from the public repository by .gitignore (source footage 24,777,960 B + VO mp3 2,953,936 B, each marked local_only: true below); their hashes are kept here for provenance, and the final videos are reproducible only while those local inputs exist. Four more files are LOCAL-ONLY since the 22 Nov 2026 sanitization round (original final videos + chk-21/chk-22, which still show truncated Enygma Spend/View key fragments); their sanitized public versions are listed below and are the files committed to the public repository.",
+  "tx_audit": "experiments/transactions/tx-09edab2b/"
+}

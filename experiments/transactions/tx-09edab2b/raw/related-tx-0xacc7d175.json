@@ -1,0 +1,123 @@
+{
+  "calls": [
+    {
+      "attempts": 1,
+      "endpoint": "https://testnet-rpc.rayls.com",
+      "method": "eth_getTransactionByHash",
+      "response": {
+        "id": 1,
+        "jsonrpc": "2.0",
+        "result": {
+          "accessList": [],
+          "blockHash": "0x740dc3dc76e077f9ff0f289bdd81f7ce2a358076f2f75d77c7cf271595901656",
+          "blockNumber": "0x17ad04c",
+          "chainId": "0x6f5337",
+          "from": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+          "gas": "0xa4c4",
+          "gasPrice": "0xb2d05e000",
+          "hash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2",
+          "input": "0xa9059cbb00000000000000000000000071af09966cbed4434cca97c40fa38b8083548b9500000000000000000000000000000000000000000000000007fe5cf2bea00000",
+          "maxFeePerGas": "0xd693a4000",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x15f4",
+          "r": "0x83ae632f7428a82cc57a9325e3f4dbe8ba8d0e8f99ee28e6a1dd2c33a80ee0ea",
+          "s": "0x468d99f901dcbf08b0e2eb9a434e44c90cc0c12e97cde3f6c6bd6d20b3737778",
+          "to": "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+          "transactionIndex": "0x0",
+          "type": "0x2",
+          "v": "0x0",
+          "value": "0x0",
+          "yParity": "0x0"
+        }
+      }
+    },
+    {
+      "attempts": 1,
+      "endpoint": "https://testnet-rpc.rayls.com",
+      "method": "eth_getTransactionReceipt",
+      "response": {
+        "id": 1,
+        "jsonrpc": "2.0",
+        "result": {
+          "blockHash": "0x740dc3dc76e077f9ff0f289bdd81f7ce2a358076f2f75d77c7cf271595901656",
+          "blockNumber": "0x17ad04c",
+          "contractAddress": null,
+          "cumulativeGasUsed": "0xa34e",
+          "effectiveGasPrice": "0xb2d05e000",
+          "from": "0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+          "gasUsed": "0xa34e",
+          "logs": [
+            {
+              "address": "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+              "blockHash": "0x740dc3dc76e077f9ff0f289bdd81f7ce2a358076f2f75d77c7cf271595901656",
+              "blockNumber": "0x17ad04c",
+              "blockTimestamp": "0x6b01671d",
+              "data": "0x00000000000000000000000000000000000000000000000007fe5cf2bea00000",
+              "logIndex": "0x0",
+              "removed": false,
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x000000000000000000000000a5f0c684eb49866a9f62f901cd85f98a19da0ac8",
+                "0x00000000000000000000000071af09966cbed4434cca97c40fa38b8083548b95"
+              ],
+              "transactionHash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2",
+              "transactionIndex": "0x0"
+            }
+          ],
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000100000000000000000100000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000010000000000000000000000800000000000100000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000",
+          "status": "0x1",
+          "to": "0x07e17e17e17e17e17e17e17e17e17e17e17e17ea",
+          "transactionHash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        }
+      }
+    },
+    {
+      "attempts": 1,
+      "endpoint": "https://testnet-rpc.rayls.com",
+      "method": "eth_getBlockByNumber",
+      "response": {
+        "id": 1,
+        "jsonrpc": "2.0",
+        "result": {
+          "baseFeePerGas": "0xb2d05e000",
+          "blobGasUsed": "0x0",
+          "difficulty": "0x0",
+          "excessBlobGas": "0x0",
+          "extraData": "0x",
+          "gasLimit": "0x1dcd6500",
+          "gasUsed": "0xa34e",
+          "hash": "0x740dc3dc76e077f9ff0f289bdd81f7ce2a358076f2f75d77c7cf271595901656",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000100000000000000000100000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000010000000000000000000000800000000000100000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000",
+          "miner": "0xa6869d49b79a388b1fe840b15d845dd653820290",
+          "mixHash": "0xb00bad1c5a5aa931c25b4ba247a249149e3ac0604cef3cfa931d8607aaa55802",
+          "nonce": "0x000000fc0004c76e",
+          "number": "0x17ad04c",
+          "parentBeaconBlockRoot": "0x862d0622d21544045787850d8865f5c00a484cbd8d0a01090262f2a62c18c724",
+          "parentHash": "0xbd55121838a84edbdf993ea494fe503e42cb4417683c6a244c3c62da364501d6",
+          "receiptsRoot": "0x30381673ff8cb7935b20b2b61fad91d01f251cc1f6d22c8aa2bdb15cd43d871f",
+          "requestsHash": "0x3626ab3e884fed3595dcceafcfc7bcd494728cddc1e53df3917f74a186bd9f26",
+          "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+          "size": "0x326",
+          "stateRoot": "0xbbeb68e5baea9f9153fea3aedfc1229dcc6a86c422879f45b001e40dd2850ca5",
+          "timestamp": "0x6b01671d",
+          "transactions": [
+            "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2"
+          ],
+          "transactionsRoot": "0xfc96fb3cb139cd72f86ee351b34d380478df430ac1fffaf0be26390a7f333196",
+          "uncles": [],
+          "withdrawals": [],
+          "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+        }
+      }
+    }
+  ],
+  "chain_id_expected": 7295799,
+  "expected_block": 24825932,
+  "relation_to_target": "second relayer tx within blocks 24825800-24826200 of target 0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb; ERC20 transfer on the RLS token proxy 4 blocks after the target tx",
+  "retrieved_at_utc": "2026-11-21T16:25:18Z",
+  "script": "related-tx fetch via curl (manual step, documented in TX-AUDIT-REPORT.md)",
+  "script_version": "n/a - curl",
+  "tx_hash": "0xacc7d175e08b72766796807b34141185e461fcec0d72df6ccb8dc621406509b2"
+}

@@ -1,0 +1,32 @@
+{
+  "event_signatures": {
+    "CoinLocked": "CoinLocked(uint256,uint256,uint256)",
+    "Commitment": "Commitment(uint256,uint256)",
+    "EncryptedNote": "EncryptedNote(uint256,uint256,bytes,bytes)",
+    "Nullifier": "Nullifier(uint256,uint256,uint256)",
+    "PaidOut": "PaidOut(uint256,address,address,uint256)",
+    "PartialWithdrawal": "PartialWithdrawal(uint256,address,uint256,uint256)"
+  },
+  "events_js": {
+    "CoinLocked": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`treeNumber`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`nullifier`,type:`uint256`}],name:`CoinLocked`,type:`event`},",
+    "Commitment": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`commitment`,type:`uint256`}],name:`Commitment`,type:`event`},",
+    "EncryptedNote": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`commitment`,type:`uint256`},{indexed:!1,internalType:`bytes`,name:`ciphertextI`,type:`bytes`},{indexed:!1,internalType:`bytes`,name:`ciphertextII`,type:`bytes`}],name:`EncryptedNote`,type:`event`},",
+    "Nullifier": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`treeNumber`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`nullifier`,type:`uint256`}],name:`Nullifier`,type:`event`},",
+    "PaidOut": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`address`,name:`token`,type:`address`},{indexed:!0,internalType:`address`,name:`recipient`,type:`address`},{indexed:!1,internalType:`uint256`,name:`amount`,type:`uint256`}],name:`PaidOut`,type:`event`},",
+    "PartialWithdrawal": "{anonymous:!1,inputs:[{indexed:!0,internalType:`uint256`,name:`vaultId`,type:`uint256`},{indexed:!0,internalType:`address`,name:`recipient`,type:`address`},{indexed:!1,internalType:`uint256`,name:`amount`,type:`uint256`},{indexed:!0,internalType:`uint256`,name:`changeCommitment`,type:`uint256`}],name:`PartialWithdrawal`,type:`event`},"
+  },
+  "indexed_flags_note": "in the minified bundle, indexed:!0 means indexed=true and indexed:!1 means indexed=false (JS !0=true, !1=false)",
+  "interface": "IEnygmaDvp (as embedded in the demo bundle; client-side ABI, NOT verified contract source)",
+  "provenance": {
+    "bundle_bytes": 1422052,
+    "bundle_sha256": "7530bbc2d7a301c50e28923529cb9315f88145a9a25a7c71db8a1f34afd9ca68",
+    "bundle_url": "https://enygma-testnet.rayls.com/assets/index-Dlv-HYaZ.js",
+    "note": "bundle SHA-256 matches the SHA-256 recorded in ENYGMA-TESTNET-AUDIT-REPORT.md section C.4 (7530bbc2...); bundle unchanged since the 21 Nov audit.",
+    "retrieved_at_utc": "2026-11-21T16:17:00Z",
+    "source": "https://enygma-testnet.rayls.com/"
+  },
+  "script": "bundle ABI extraction (manual step, documented in TX-AUDIT-REPORT.md)",
+  "script_version": "n/a - python extraction from downloaded bundle",
+  "transferV2_abi_js": "{inputs:[{components:[{components:[{components:[{internalType:`uint256`,name:`x`,type:`uint256`},{internalType:`uint256`,name:`y`,type:`uint256`}],internalType:`struct IEnygmaDvp.G1Point`,name:`a`,type:`tuple`},{components:[{internalType:`uint256[2]`,name:`x`,type:`uint256[2]`},{internalType:`uint256[2]`,name:`y`,type:`uint256[2]`}],internalType:`struct IEnygmaDvp.G2Point`,name:`b`,type:`tuple`},{components:[{internalType:`uint256`,name:`x`,type:`uint256`},{internalType:`uint256`,name:`y`,type:`uint256`}],internalType:`struct IEnygmaDvp.G1Point`,name:`c`,type:`tuple`}],internalType:`struct IEnygmaDvp.SnarkProof`,name:`proof`,type:`tuple`},{internalType:`uint256[]`,name:`statement`,type:`uint256[]`},{internalType:`uint256`,name:`numberOfInputs`,type:`uint256`},{internalType:`uint256`,name:`numberOfOutputs`,type:`uint256`}],internalType:`struct IEnygmaDvp.ProofReceipt`,name:`receipt`,type:`tuple`},{internalType:`bytes[]`,name:`ciphertextI`,type:`bytes[]`},{internalType:`bytes[]`,name:`ciphertextII`,type:`bytes[]`}],name:`transferV2`,outputs:[{internalType:`bool`,name:``,type:`bool`}],stateMutability:`nonpayable`,type:`function`},",
+  "transferV2_canonical_signature": "transferV2((((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)),uint256[],uint256,uint256),bytes[],bytes[])"
+}

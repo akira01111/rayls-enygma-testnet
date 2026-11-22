@@ -1,0 +1,51 @@
+{
+  "finding": "all four lookups returned count 0: the function selector and the three event topic0s are not in the 4byte.directory database. Resolution therefore relies on the demo-bundle ABI + local keccak256 topic matching (see decode script), not on 4byte.",
+  "queries": [
+    {
+      "endpoint": "https://www.4byte.directory/api/v1/signatures/?hex_signature=0xaacd552c",
+      "hex_signature": "0xaacd552c",
+      "kind": "function selector",
+      "response": {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      }
+    },
+    {
+      "endpoint": "https://www.4byte.directory/api/v1/event-signatures/?hex_signature=0x437885c05eacc89ce854c46fbeb8290d4c624ea6b561c7a784d86bb5369b2ea3",
+      "hex_signature": "0x437885c05eacc89ce854c46fbeb8290d4c624ea6b561c7a784d86bb5369b2ea3",
+      "kind": "event",
+      "response": {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      }
+    },
+    {
+      "endpoint": "https://www.4byte.directory/api/v1/event-signatures/?hex_signature=0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+      "hex_signature": "0x28ec6d3cf0e771d5a8b44b29744de77a87c1301f68127019d5049968253913b4",
+      "kind": "event",
+      "response": {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      }
+    },
+    {
+      "endpoint": "https://www.4byte.directory/api/v1/event-signatures/?hex_signature=0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+      "hex_signature": "0x3703497aa5a04538e087fdf04a8711f50aa786fc6bc4bf911fc5ef5459ac34b2",
+      "kind": "event",
+      "response": {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      }
+    }
+  ],
+  "retrieved_at_utc": "2026-11-21T16:25:54Z",
+  "script": "4byte.directory API (manual step, documented in TX-AUDIT-REPORT.md)"
+}

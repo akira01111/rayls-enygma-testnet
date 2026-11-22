@@ -1,0 +1,125 @@
+{
+  "block": 24825928,
+  "chain_id": 7295799,
+  "limitations": [
+    "No verified contract source for the deployed SharedVault implementation (0xAd966704...); the function/event ABIs used come from the demo-bundle client code (decoded/bundle-abi-extract.json), not from verified on-chain source. Selector/topic matches are on-chain evidence for the signatures, but internal contract logic is not proven.",
+    "4byte.directory has no entry for selector 0xaacd552c or for the three event topic0s (count 0 for all four; decoded/lookups-4byte.json). Resolution relies on the bundle ABI + local keccak256.",
+    "Note values (amounts, sender, receiver, token) are encrypted; the mapping of the 3 output notes to (6 RLS payment / 3.908 RLS change / 4.416 RLS fee) is a reconstruction from the wallet balances and the note counts, NOT a verified on-chain fact.",
+    "The 3.84 RLS \"gas\" component of the wallet display never appears as its own word in the on-chain data; it is determined only arithmetically (4.416 statement fee minus 0.576 foundation transfer = 3.84) and its exact nature (relayer service fee vs gas reimbursement) is unknown.",
+    "Whether 0x71af09966cbed4434cca97c40fa38b8083548b95 (Auditor EOA per the audit map) is the Rayls Foundation fee address is unknown.",
+    "The statement array semantics are verified by value-matching for positions 3-8 (nullifier, 3 commitments, vault address, 4.416 RLS fee); positions 0, 1, 2 and 9 are unidentified (two zeros and two hashes) because no published statement layout exists - the Merkle-root / binding-hash readings for positions 2 and 9 are inferences, not facts.",
+    "This audit covers one transaction plus one related fee-settlement tx; it does not prove anything about other shielded transfers."
+  ],
+  "provenance": {
+    "block": 24825928,
+    "bundle_abi_extract_sha256": "5df1cc6a69f7de72ed0dd1c5072e713f81a5f0993288771976d81f6736f4ff07",
+    "chain_id": 7295799,
+    "note": "SHA-256 values here are computed at decode time from the read-only raw files; the manifest is the authoritative checksum record.",
+    "retrieved_at_utc": "2026-11-21T16:15:18Z",
+    "script": "scripts/decode_tx_09edab2b.py",
+    "script_version": "1.0.0",
+    "source_files_sha256": {
+      "block.json": "958481ee13bece5f15dcbbaef4948dd13c8a23e311e30a06fab9b91515fa9492",
+      "contracts.json": "1ecc0fd47d9c0f89ddfa55b656630be9b67ba5c1aba1e110a07cc5381974d6db",
+      "explorer-relayer-txlist.json": "dcb8043e40aefae32299d14a0389b26813de2e2849271cdef0a68f83f95ca23a",
+      "explorer.json": "557b5f0ce7d6c814dab5cf39daa8f3021a1554ada7650e61633d17814b5b28ad",
+      "logs.json": "e500fa8f347f571da0a3e0060c12c7c6e38da8927fb4b7da52fcda699c35ef51",
+      "receipt.json": "2f08084e5c8fbc84daf2303c3c4b222171b3f6192a49693925d1a917fe855988",
+      "registry-usernames.json": "66d515ebb152483f9b2a4f98ee73e1ec60463866141a7c7d5cb52f802508bf20",
+      "related-tx-0xacc7d175.json": "48fe56b9189b4a9eb66a3e16c48afcda77ba8a19953ec5d5ea698d57ffffda86",
+      "transaction.json": "1ade629551b3d14a7d0bd048cc66ec91920221f3bf8ad2dd247d748728730be0"
+    },
+    "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+  },
+  "questions": {
+    "q1_receipt_status": {
+      "answer": "Receipt status 0x1 (success). Block 24825928, transactionIndex 0, gasUsed 1,316,001 of gasLimit 1,630,484, effectiveGasPrice 48,000,000,000 wei, 7 logs, contractAddress null. Block 24825928 contains exactly this one transaction.",
+      "evidence": [
+        "raw/receipt.json calls[0].response.result.status, .gasUsed, .blockNumber",
+        "raw/block.json calls[0].response.result.transactions (length 1)",
+        "raw/explorer.json calls[1].response.result.status = \"1\""
+      ],
+      "label": "verified-fact"
+    },
+    "q2_calldata_function": {
+      "answer": "Function is transferV2. Selector 0xaacd552c equals the first 4 bytes of keccak256 of the canonical signature transferV2((((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)),uint256[],uint256,uint256),bytes[],bytes[]) taken from the demo-bundle IEnygmaDvp ABI. Calldata parses cleanly: receipt tuple with an 8-word (256-byte) Groth16 proof, statement of 10 uint256 values, numberOfInputs 1, numberOfOutputs 3, ciphertextI 3 entries, ciphertextII 3 entries. The statement contains the spent nullifier hash and the three new commitment hashes (verified by hex search).",
+      "evidence": [
+        "raw/transaction.json calls[0].response.result.input (4,804 bytes)",
+        "decoded/bundle-abi-extract.json transferV2_canonical_signature",
+        "decoded/decoded_events.json calldata.receipt_tuple, .ciphertextI, .ciphertextII"
+      ],
+      "label": "verified-fact",
+      "limitation": "No verified contract source exists for the deployed vault implementation, so what transferV2 does internally with the proof/statement/ciphertexts is NOT proven from source; the function identity and the calldata structure are proven from the selector match + the clean structural parse. The ABI used is the demo app client-side ABI (decoded/bundle-abi-extract.json), not verified on-chain source."
+    },
+    "q3_destination_contract_sharedvault": {
+      "answer": "Destination is the SharedVaultProxy (yx) 0x9C5Ad5e5Ea5b5910E7fD1E1CC7b70ce0e4bF06c2, called directly (NOT via Multicall3). Its EIP-1967 implementation slot reads 0xAd9667049f14D1757D147F652c41Dc241C57091C, matching the live vault-yx implementation recorded in the audit (C.3). The Explorer also displays method transferV2 for this hash; that label is a cross-check only, the proof is the selector match in Q2.",
+      "evidence": [
+        "raw/transaction.json calls[0].response.result.to",
+        "raw/contracts.json calls[] eth_getStorageAt EIP-1967 slot for the destination",
+        "raw/explorer.json calls[0].response.result.hash / .from"
+      ],
+      "label": "verified-fact"
+    },
+    "q4_event_logs": {
+      "answer": "7 logs, all from the vault proxy: 1x Nullifier (vaultId 2, treeNumber 0, nullifier 0x0c0f23a6...), 3x Commitment (vaultId 2, commitments 0x094b23a6..., 0x2304db2e..., 0x206ed94a...), 3x EncryptedNote (same 3 commitments, each with 1,312 bytes of ciphertext data = two byte arrays). No ERC20 Transfer log, no PaidOut, no PartialWithdrawal, no log from any other address. This matches the audit shielded-transfer classification (Commitment + EncryptedNote + Nullifier, no payout).",
+      "evidence": [
+        "raw/receipt.json calls[0].response.result.logs (7 entries)",
+        "raw/logs.json calls[0] block-level eth_getLogs cross-check (same 7)",
+        "decoded/decoded_events.json logs[]"
+      ],
+      "label": "verified-fact"
+    },
+    "q5_commitment_encrypted_note_observability": {
+      "answer": "Commitment hashes are public (3 hashes in topics and in the calldata statement). EncryptedNote ciphertexts are public as opaque bytes (1,312 bytes each: two arrays; per-note ciphertextI and ciphertextII lengths recorded with SHA-256 fingerprints). The note VALUES (amounts, sender, receiver, token) are NOT visible in the ciphertext: no plaintext amount, address, or token identifier appears anywhere in the logs. One input note was spent (1 nullifier) and 3 output notes were created (3 commitments).",
+      "evidence": [
+        "decoded/decoded_events.json logs[] decoded_fields",
+        "decoded/decoded_events.json hidden_vs_visible"
+      ],
+      "label": "direct-observation"
+    },
+    "q6_hidden_vs_visible": {
+      "answer": "NOT visible anywhere in the raw transaction input, receipt, or logs (case-insensitive hex search, bare address and 32-byte-word forms): receiver EVM 0x680d...0efc, sender EVM 0x0c5b...0b5, RLS token proxy 0x07e1...7ea, amount 6 RLS as 6e18, fee values 3.84 / 0.58 / 4.42 RLS as 18-decimal words. FOUND in the on-chain data: the fee TOTAL 4.416 RLS as a 32-byte word in the calldata (statement[8] = 4,416,000,000,000,000,000 wei); the relayer address as tx.from; the vault proxy address (also as statement[7]); the spent nullifier hash and the 3 commitment hashes (in the calldata statement and in log topics). The 6 RLS figure, the two usernames, and the token type come only from the wallet UI / VO / video (direct observation of the experiment), NOT from on-chain data. \"Not visible in this data\" is NOT proof that the information is unknowable in principle: parties holding the relevant keys (receiver view key, sender keys, auditor keys) could decrypt the notes; this audit does not test that.",
+      "evidence": [
+        "decoded/decoded_events.json hidden_vs_visible (per-item found_in lists)",
+        "decoded/decoded_events.json calldata.statement_interpretation.statement_8",
+        "raw/registry-usernames.json logs[] (username -> address resolution)"
+      ],
+      "label": "direct-observation"
+    },
+    "q7_relayer_role_sender_link": {
+      "answer": "tx.from is the relayer 0xa5f0c684eb49866a9f62f901cd85f98a19da0ac8 (verified-fact). The registry shows that address holds the username rayls-relayer (verified-fact from UsernameSet logs). The docs claim the relayer submits user transactions and the public sender shown is the relayer (official-claim). Whether THIS tx was submitted on behalf of @anara (0x0c5b...0b5) is a RECONSTRUCTION, not an on-chain fact: the on-chain data contains no link to @anara (no sender address, no username, no key). The link rests on experiment context: the same block/time/method/vault as the success screen in the recorded experiment, the matching nullifier/commitment pattern, and the shielded-balance decrease shown in the wallet UI. from=relayer alone is NOT proof that the relayer is the sender, and the absence of the sender address is NOT proof of absolute unlinkability.",
+      "evidence": [
+        "raw/transaction.json calls[0].response.result.from",
+        "raw/registry-usernames.json logs[] (rayls-relayer, first registration)",
+        "decoded/decoded_events.json hidden_vs_visible (sender EVM not found)"
+      ],
+      "label": "reconstruction"
+    },
+    "q8_fee_vs_wallet": {
+      "answer": "On-chain gas for the target tx: 1,316,001 gas x 48,000,000,000 wei = 63,168,048,000,000,000 wei = 0.063168048 RLS (18 decimals assumed). The wallet displayed 3.84 RLS gas + 0.58 RLS Rayls Foundation fee = 4.42 RLS total (detail activity 4.416 RLS). The on-chain gas cost (0.063 RLS) does NOT equal the displayed gas fee (3.84 RLS) - the wallet \"gas\" label is the relayer service fee, not the chain gas cost. The TOTAL fee IS public on-chain: calldata statement[8] = 4,416,000,000,000,000,000 wei = 4.416 RLS exactly, matching the wallet detail fee. The 0.58 foundation fee has an on-chain counterpart: 4 blocks later (block 24825932) the relayer transferred 0.576 RLS of the RLS token to 0x71af09966cbed4434cca97c40fa38b8083548b95 (verified-fact; 0.576 rounds to 0.58 at 2 decimals). That address is recorded in the audit map as the Auditor EOA; whether it is the Rayls Foundation fee address is UNKNOWN. The split closes exactly: 4.416 = 3.84 + 0.576, so the relayer-retained portion (3.84) is determined arithmetically from two verified on-chain numbers, though it never appears as its own word in the data. RECONSTRUCTION (not verified): the transfer created 3 output notes for 1 input note; the sender shielded balance fell by 10.416 RLS = 6 payment + 4.416 fee, so the 4.416 fee plausibly sits inside the shielded notes (one output note to the relayer, of which 0.576 went on to the foundation address and 3.84 stayed with the relayer). The note values are encrypted, so this mapping cannot be verified from the chain.",
+      "evidence": [
+        "raw/receipt.json calls[0].response.result.gasUsed, .effectiveGasPrice",
+        "decoded/decoded_events.json calldata.statement_interpretation.statement_8 (4.416 RLS word)",
+        "raw/related-tx-0xacc7d175.json calls[0]/[1] (transfer 0.576 RLS, block 24825932)",
+        "raw/explorer-relayer-txlist.json (exactly 2 relayer txs in 24825800-24826200)",
+        "decoded/decoded_events.json fee, .related_tx"
+      ],
+      "label": "verified-fact"
+    }
+  },
+  "registry_resolutions": {
+    "anara": {
+      "address": "0x0c5b369ad7d0c4e051a2887575f7fc85e0ccd0b5",
+      "evidence": "raw/registry-usernames.json logs[] UsernameSet(anara), block 0x1645a5f, tx 0x2d898d9b21ef9f3634a0e1354568f98398d4d172556af520590d62d111d99488",
+      "label": "verified-fact"
+    },
+    "kittynim": {
+      "address": "0x680d90983da58bcb7d127e3421193274e84e0efc",
+      "evidence": "raw/registry-usernames.json logs[] UsernameSet(kittynim), block 0x167bc88, tx 0x9b34ac6ee320d029da46fe7d5feaf5c0a9b2baff628b46d0c626ab13b95ad00d",
+      "label": "verified-fact"
+    },
+    "note": "195 UsernameSet logs over blocks 23212003-24910000 (audit D.6 recorded 194 at 21 Nov; +1 since). Two ranges returned \"No logs found\" (23812003-24012002, 24812003-24910000) - re-checked, genuinely empty.",
+    "total_usernames_observed": 195
+  },
+  "tx_hash": "0x09edab2bb8914aea3c905608ea9fcd09c056a470a5e150df03e0b324eff525bb"
+}

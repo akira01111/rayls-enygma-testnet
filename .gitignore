@@ -1,0 +1,21 @@
+# Local-only files — never commit (Anara's rule, 21 Nov 2026).
+# The review-PDF archive stays on this machine only.
+pdf/
+# PDF build validation screenshots (generated, not evidence).
+experiments/transactions/tx-09edab2b/.src/validate/
+# Video inputs are local-only (22 Nov 2026): raw footage + VO mp3 are
+# inputs to the journey build, not publishable evidence. Their hashes
+# stay recorded in the journey manifest for provenance. Exact paths
+# only — nothing else in raw-data/videos/ is excluded.
+raw-data/videos/week2-source-footage-610a5cd30d3cdc457ea836e69c74229a6fb42d3530f4227a2269a00f4af311fa.mp4
+raw-data/videos/ElevenLabs_2026-11-21T13_44_30_Zara_-_The_Warm__Real-World_Conversationalist_pvc_s50_sim75_v4.mp3
+# Sanitization originals are local-only (22 Nov 2026): the original
+# screenshots chk-21/chk-22 and the original final videos still show
+# truncated Enygma Spend/View key fragments. Public sanitized versions
+# (chk-21-public.jpg, chk-22-public.jpg, *-public.mp4) are committed
+# instead. Originals' hashes stay recorded in the journey manifest
+# for provenance. Exact paths only.
+raw-data/screenshots/chk-21.jpg
+raw-data/screenshots/chk-22.jpg
+experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final.mp4
+experiments/testnet-journeys/week2-private-payment/enygma-week2-private-payment-final-1080p.mp4
